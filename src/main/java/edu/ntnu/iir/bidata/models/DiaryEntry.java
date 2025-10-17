@@ -46,14 +46,14 @@ public class DiaryEntry {
      * @return the title of a diary entry.
      */
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     /**
      * @return the authors of a diary entry.
      */
     public HashMap<UUID, Author> getAuthors() {
-        return authors;
+        return this.authors;
     }
 
     /**
@@ -71,14 +71,14 @@ public class DiaryEntry {
      * @return the content of a diary entry.
      */
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     /**
      * @return the date of a diary entry.
      */
     public LocalDateTime getDate() {
-        return date;
+        return this.date;
     }
 
     /**
