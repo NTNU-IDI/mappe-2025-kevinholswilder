@@ -1,4 +1,4 @@
-package main.java.edu.ntnu.iir.bidata.database;
+package main.java.edu.ntnu.iir.bidata.register;
 
 /**
  *
@@ -8,22 +8,22 @@ package main.java.edu.ntnu.iir.bidata.database;
  * @Date 16.10.2025
  */
 
-public class DatabaseHandler {
+public class RegisterHandler {
 
     /**
      * Returns the diary database instance.
      * @return DiaryDatabase
      */
-    public static DiaryDatabase getDiaryDatabase() {
-        return DiaryDatabase.getInstance();
+    public static DiaryRegister getDiaryDatabase() {
+        return DiaryRegister.getInstance();
     }
 
     /**
      * Returns the author database instance.
      * @return AuthorDatabase
      */
-    public static AuthorDatabase getAuthorDatabase() {
-        return AuthorDatabase.getInstance();
+    public static AuthorRegister getAuthorDatabase() {
+        return AuthorRegister.getInstance();
     }
 
 }

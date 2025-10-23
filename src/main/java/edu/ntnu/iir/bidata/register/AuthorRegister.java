@@ -1,4 +1,4 @@
-package main.java.edu.ntnu.iir.bidata.database;
+package main.java.edu.ntnu.iir.bidata.register;
 
 import main.java.edu.ntnu.iir.bidata.models.Author;
 
@@ -14,16 +14,16 @@ import java.util.UUID;
  * @Date 21/10/2025
  */
 
-public class AuthorDatabase {
+public class AuthorRegister {
 
-    private static AuthorDatabase instance;
+    private static AuthorRegister instance;
 
     private final HashMap<UUID, Author> authorEntries;
 
     /**
      * Representation of the database constructor.
      */
-    private AuthorDatabase() {
+    private AuthorRegister() {
         try {
             this.authorEntries = new HashMap<>();
         } catch (Exception e) {
@@ -34,9 +34,9 @@ public class AuthorDatabase {
     /**
      * @return the single instance of the database.
      */
-    public static AuthorDatabase getInstance() {
+    public static AuthorRegister getInstance() {
         if (instance == null) {
-            instance = new AuthorDatabase();
+            instance = new AuthorRegister();
         }
         return instance;
     }

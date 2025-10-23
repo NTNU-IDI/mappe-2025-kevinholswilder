@@ -1,4 +1,4 @@
-package main.java.edu.ntnu.iir.bidata.database;
+package main.java.edu.ntnu.iir.bidata.register;
 
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
@@ -15,16 +15,16 @@ import java.util.stream.Stream;
  * @Date 16.10.2025
  */
 
-public class DiaryDatabase {
+public class DiaryRegister {
 
-    private static DiaryDatabase instance;
+    private static DiaryRegister instance;
 
     private final HashMap<UUID, DiaryEntry> diaryEntries;
 
     /**
      * Representation of the database constructor.
      */
-    private DiaryDatabase() {
+    private DiaryRegister() {
         try {
             this.diaryEntries = new HashMap<>();
         } catch (Exception e) {
@@ -35,9 +35,9 @@ public class DiaryDatabase {
     /**
      * @return the single instance of the database.
      */
-    public static DiaryDatabase getInstance() {
+    public static DiaryRegister getInstance() {
         if (instance == null) {
-            instance = new DiaryDatabase();
+            instance = new DiaryRegister();
         }
         return instance;
     }
