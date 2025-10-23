@@ -30,6 +30,9 @@ public class ConsoleUI {
      * Starts the console UI.
      */
     public void start() {
+        if (this.scanner == null) {
+            this.init();
+        }
         System.out.println("Welcome to the cooking diary!");
     }
 
