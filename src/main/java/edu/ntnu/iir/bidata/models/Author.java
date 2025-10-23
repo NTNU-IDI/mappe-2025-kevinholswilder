@@ -1,6 +1,5 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
-import javax.persistence.Entity;
 import java.util.UUID;
 
 /**
@@ -10,7 +9,6 @@ import java.util.UUID;
  * @Date 12/10/2025
  */
 
-@Entity
 public class Author {
 
     private final String name;

@@ -1,6 +1,5 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
-import javax.persistence.Entity;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.UUID;
@@ -12,7 +11,6 @@ import java.util.UUID;
  * @Date 12/10/2025
  */
 
-@Entity
 public class DiaryEntry {
 
     private String title;
