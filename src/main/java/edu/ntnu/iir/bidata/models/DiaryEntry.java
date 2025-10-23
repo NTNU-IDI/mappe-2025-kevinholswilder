@@ -14,9 +14,9 @@ import java.util.UUID;
 public class DiaryEntry {
 
     private String title;
-    private HashMap<UUID, Author> authors;
+    private final HashMap<UUID, Author> authors;
     private String content;
-    private LocalDateTime date;
+    private final LocalDateTime date;
 
     /**
      * @param title Sets the title of a diary entry.
