@@ -17,6 +17,7 @@ public class DiaryEntry {
     private final HashMap<UUID, Author> authors;
     private String content;
     private final LocalDateTime date;
+    private final UUID diaryEntryId;
 
     /**
      * @param title Sets the title of a diary entry.
@@ -27,6 +28,7 @@ public class DiaryEntry {
         this.authors = new HashMap<>();
         this.content = "";
         this.date = LocalDateTime.now();
+        this.diaryEntryId = UUID.randomUUID();
     }
 
     /**
@@ -95,4 +97,12 @@ public class DiaryEntry {
     public void removeAuthor(Author author) {
         this.authors.remove(author.getAuthorId());
     }
+
+    /**
+     * @return ID of a diary entry.
+     */
+    public UUID getId() {
+        return this.diaryEntryId;
+    }
+
 }
