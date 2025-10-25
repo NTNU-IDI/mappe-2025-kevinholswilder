@@ -53,4 +53,12 @@ public class Author {
     public UUID getAuthorId() {
         return this.authorId;
     }
+
+    /**
+     * @return String representation of an author.
+     */
+    @Override
+    public String toString() {
+        return this.name + " " + this.surname;
+    }
 }
