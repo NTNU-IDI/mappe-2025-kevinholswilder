@@ -11,14 +11,18 @@ import java.util.UUID;
 
 public class Author {
 
+    private final String username;
     private final String name;
+    private final String surname;
     private final UUID authorId;
 
     /**
      * @param name Sets the name of an author.
      */
-    public Author(String name) {
+    public Author(String username, String name, String surname) {
+        this.username = username;
         this.name = name;
+        this.surname = surname;
         this.authorId = UUID.randomUUID();
     }
 
@@ -27,6 +31,20 @@ public class Author {
      */
     public String getName() {
         return this.name;
+    }
+
+    /**
+     * @return the surname of an author.
+     */
+    public String getSurname() {
+        return this.surname;
+    }
+
+    /**
+     * @return the username of an author.
+     */
+    public String getUsername() {
+        return this.username;
     }
 
     /**
