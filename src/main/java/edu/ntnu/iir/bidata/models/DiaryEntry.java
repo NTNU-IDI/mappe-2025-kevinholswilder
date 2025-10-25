@@ -1,6 +1,5 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
-import java.time.LocalDateTime;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.UUID;
@@ -15,16 +14,18 @@ import java.util.UUID;
 public class DiaryEntry {
 
     private String title;
+    private String content;
     private final HashMap<UUID, Author> authors;
     private final LocalDate date;
     private final UUID diaryEntryId;
 
     /**
      * @param title Sets the title of a diary entry.
-     * @TODO Change the constructor to take a complete entry of a diary.
+     * @param content Sets the content of a diary entry.
      */
-    public DiaryEntry(String title) {
+    public DiaryEntry(String title, String content) {
         this.title = title;
+        this.content = content;
         this.authors = new HashMap<>();
         this.date = LocalDate.now();
         this.diaryEntryId = UUID.randomUUID();
