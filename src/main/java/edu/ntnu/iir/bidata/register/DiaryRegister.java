@@ -46,7 +46,7 @@ public class DiaryRegister {
      * @param diaryEntry takes in a [DiaryEntry] to add to the database.
      */
     public void addDiaryEntry(DiaryEntry diaryEntry) {
-        this.diaryEntries.putIfAbsent(UUID.randomUUID(), diaryEntry);
+        this.diaryEntries.putIfAbsent(diaryEntry.getId(), diaryEntry);
     }
 
     /**
