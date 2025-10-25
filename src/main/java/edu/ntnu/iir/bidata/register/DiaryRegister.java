@@ -57,6 +57,13 @@ public class DiaryRegister {
     }
 
     /**
+     * @param title takes in a string.
+     */
+    public DiaryEntry getDiaryEntryByTitle(String title) {
+        return this.getDiaryEntryStream().filter(it -> it.getTitle().equalsIgnoreCase(title)).findFirst().orElse(null);
+    }
+
+    /**
      * @param date takes in the date of the written dairy.
      * @return null if no diary can be found in the database.
      */
@@ -74,6 +81,16 @@ public class DiaryRegister {
     public List<DiaryEntry> getDiaryEntriesByPeriod(LocalDate start, LocalDate end) {
         return this.getDiaryEntryStream()
                 .filter(it -> it.getDate().isAfter(start) && it.getDate().isBefore(end))
+                .toList();
+    }
+
+    /**
+     * @param prompt takes in a string.
+     * @return a list with [DiaryEntry] objects where the content contains the given string.
+     */
+    public List<DiaryEntry> getDiaryEntriesByPrompt(String prompt) {
+        return this.getDiaryEntryStream()
+                .filter(it -> it.getContent().toLowerCase().contains(prompt.toLowerCase()))
                 .toList();
     }
 
