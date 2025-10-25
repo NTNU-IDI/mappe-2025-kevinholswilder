@@ -3,7 +3,7 @@ package main.java.edu.ntnu.iir.bidata.register;
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -60,7 +60,7 @@ public class DiaryRegister {
      * @param date takes in the date of the written dairy.
      * @return null if no diary can be found in the database.
      */
-    public List<DiaryEntry> getDiaryEntryByDate(LocalDateTime date) {
+    public List<DiaryEntry> getDiaryEntryByDate(LocalDate date) {
         return this.getDiaryEntryStream()
                 .filter(it -> it.getDate().equals(date))
                 .toList();
@@ -71,7 +71,7 @@ public class DiaryRegister {
      * @param end end of the period.
      * @return a list with [DiaryEntry] in the period from start to end.
      */
-    public List<DiaryEntry> getDiaryEntriesByPeriod(LocalDateTime start, LocalDateTime end) {
+    public List<DiaryEntry> getDiaryEntriesByPeriod(LocalDate start, LocalDate end) {
         return this.getDiaryEntryStream()
                 .filter(it -> it.getDate().isAfter(start) && it.getDate().isBefore(end))
                 .toList();

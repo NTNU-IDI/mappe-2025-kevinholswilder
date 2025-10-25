@@ -1,6 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -15,8 +16,7 @@ public class DiaryEntry {
 
     private String title;
     private final HashMap<UUID, Author> authors;
-    private String content;
-    private final LocalDateTime date;
+    private final LocalDate date;
     private final UUID diaryEntryId;
 
     /**
@@ -26,8 +26,7 @@ public class DiaryEntry {
     public DiaryEntry(String title) {
         this.title = title;
         this.authors = new HashMap<>();
-        this.content = "";
-        this.date = LocalDateTime.now();
+        this.date = LocalDate.now();
         this.diaryEntryId = UUID.randomUUID();
     }
 
@@ -77,7 +76,7 @@ public class DiaryEntry {
     /**
      * @return the date of a diary entry.
      */
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return this.date;
     }
 
