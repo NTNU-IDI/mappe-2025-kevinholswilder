@@ -1,6 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -105,4 +106,11 @@ public class DiaryEntry {
         return this.diaryEntryId;
     }
 
+    /**
+     * @return String representation of a diary entry.
+     */
+    @Override
+    public String toString() {
+        return "\nTitle: " + this.title + "\nContent: " + this.content + "\nDate: " + this.date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "\nAuthors: " + this.authors.values();
+    }
 }
