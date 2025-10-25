@@ -42,6 +42,13 @@ public class AuthorRegister {
     }
 
     /**
+     * @return an [Author] based on the username
+     */
+    public Author getAuthorByUsername(String username) {
+        return this.getAuthors().stream().findFirst().filter(it -> it.getUsername().equalsIgnoreCase(username)).orElse(null);
+    }
+
+    /**
      * @param author adds an author to the database.
      */
     public void addAuthor(Author author) {
