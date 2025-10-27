@@ -29,7 +29,7 @@ public class Author {
     /**
      * @return the name of an author.
      */
-    public String getName() {
+    public String getName()  {
         return this.name;
     }
 
