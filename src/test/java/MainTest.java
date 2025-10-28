@@ -1,6 +1,6 @@
 package test.java;
 
-import test.java.ui.ConsoleUITest;
+import test.java.register.RegisterTest;
 
 /**
  * Main Class for testing.
@@ -12,9 +12,8 @@ import test.java.ui.ConsoleUITest;
 public class MainTest {
 
     public static void main(String[] args) {
-        ConsoleUITest consoleUITest = new ConsoleUITest();
-        consoleUITest.init();
-        consoleUITest.start();
+        RegisterTest registerTest = new RegisterTest();
+        registerTest.startTests();
     }
 
 }
