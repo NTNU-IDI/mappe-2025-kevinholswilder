@@ -19,12 +19,8 @@ public class ConsoleUI {
      * @throws IllegalStateException if the scanner cannot be initialized.
      */
     public void init() {
-        try {
-            scanner = new Scanner(System.in, StandardCharsets.UTF_8);
-            System.out.println("Initializing...");
-        } catch (Exception e) {
-            throw new IllegalStateException("Scanner could not be initialized.", e.getCause());
-        }
+        scanner = new Scanner(System.in, StandardCharsets.UTF_8);
+        System.out.println("Initializing...");
     }
 
     /**
