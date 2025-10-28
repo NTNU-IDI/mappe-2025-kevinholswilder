@@ -38,7 +38,7 @@ public class RegisterTest {
 
         List<DiaryEntry> diaries = RegisterHandler.getDiaryDatabase().getDiaryEntries();
 
-        Assert.assertSame(1, diaries.size()); // Expected 2
+        Assert.assertSame(2, diaries.size()); // Expected 2
         Assert.assertEquals("Taco", RegisterHandler.getDiaryDatabase().getDiaryEntryByTitle("Taco").getTitle());
     }
 
