@@ -50,4 +50,19 @@ public class UtilityManager {
     public static String capitalize(String string) {
         return string.substring(0, 1).toUpperCase() + string.substring(1);
     }
+
+    /**
+     * @return a string consisting of all the lines read from the scanner.
+     */
+    public static String readMultiLineInput(Scanner scanner) {
+        StringBuilder stringBuilder = new StringBuilder();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            if (line.equalsIgnoreCase("exit")) {
+                break;
+            }
+            stringBuilder.append(line).append("\n");
+        }
+        return stringBuilder.toString();
+    }
 }
