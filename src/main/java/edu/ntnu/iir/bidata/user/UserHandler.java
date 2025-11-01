@@ -3,7 +3,6 @@ package main.java.edu.ntnu.iir.bidata.user;
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
-import test.java.MainTest;
 
 import java.util.Scanner;
 
@@ -20,7 +19,7 @@ public class UserHandler {
 
     private UserHandler() {}
 
-    public static void login(Scanner input) {
+    public static boolean login(Scanner input) {
         System.out.println("Please enter your username: ");
         String username = UtilityManager.ensureNonEmptyString(input);
 
@@ -28,7 +27,7 @@ public class UserHandler {
         Author author = RegisterHandler.getAuthorDatabase().getAuthorByUsername(username);
         if (author == null) {
             System.out.println("Invalid username, you're being sent back to the main menu.");
-            return;
+            return false;
         }
 
         // Login
@@ -36,7 +35,7 @@ public class UserHandler {
 
         // Set the current operating user.
         setAuthor(author);
-        MainTest.diaryFlow(input);
+        return true;
     }
 
     public static void register(Scanner input) {
