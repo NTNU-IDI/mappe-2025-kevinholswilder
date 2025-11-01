@@ -1,6 +1,7 @@
 package test.java;
 
 import test.java.register.RegisterTest;
+import test.java.ui.ConsoleUITest;
 import test.java.utils.UtilityManagerTest;
 
 /**
@@ -13,12 +14,15 @@ import test.java.utils.UtilityManagerTest;
 public class MainTest {
 
     public static void main(String[] args) {
-        RegisterTest registerTest = new RegisterTest();
-        registerTest.startTests();
+        // RegisterTest registerTest = new RegisterTest();
+        // registerTest.startTests();
 
-        UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
-        System.out.println("Enter a value to test the utility manager:");
-        utilityManagerTest.readMultiLineInput();
+        // UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
+        // System.out.println("Enter a value to test the utility manager:");
+        // utilityManagerTest.readMultiLineInput();
+
+        ConsoleUITest consoleUITest = new ConsoleUITest();
+        consoleUITest.start();
     }
 
 }
