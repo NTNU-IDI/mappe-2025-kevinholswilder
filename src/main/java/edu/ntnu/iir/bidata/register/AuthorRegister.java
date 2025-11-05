@@ -23,11 +23,7 @@ public class AuthorRegister {
      * Representation of the database constructor.
      */
     private AuthorRegister() {
-        try {
-            this.authorEntries = new HashMap<>();
-        } catch (Exception e) {
-            throw new RuntimeException("Could not establish database.", e.getCause());
-        }
+        this.authorEntries = new HashMap<>();
     }
 
     /**
