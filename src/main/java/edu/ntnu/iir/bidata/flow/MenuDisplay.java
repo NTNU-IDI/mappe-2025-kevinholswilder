@@ -1,4 +1,4 @@
-package test.java.flow;
+package main.java.edu.ntnu.iir.bidata.flow;
 
 /**
  * MenuDisplay class that displays all menu options.

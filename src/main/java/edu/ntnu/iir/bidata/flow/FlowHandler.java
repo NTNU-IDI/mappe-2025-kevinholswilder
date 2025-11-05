@@ -1,4 +1,4 @@
-package test.java.flow;
+package main.java.edu.ntnu.iir.bidata.flow;
 
 import main.java.edu.ntnu.iir.bidata.diary.DiaryHandler;
 import main.java.edu.ntnu.iir.bidata.user.UserHandler;
