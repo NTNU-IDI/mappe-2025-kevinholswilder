@@ -26,7 +26,7 @@ public class DiaryHandler {
         System.out.println("What's the title of your diary entry?");
         String title = UtilityManager.ensureNonEmptyString(input);
 
-        System.out.println("What's the content of your diary entry?");
+        System.out.println("What's the content of your diary entry (Please write 'exit' to stop writing)?");
         String content = UtilityManager.readMultiLineInput(input);
 
         // Create a new diary entry.
