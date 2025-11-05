@@ -9,6 +9,9 @@ package main.java.edu.ntnu.iir.bidata.flow;
 
 public class MenuDisplay {
 
+    /**
+     * Displays the main menu.
+     */
     public static void mainMenu() {
         System.out.println("--=[ Main Menu ]=--");
         System.out.println("Welcome to the diary application,\nplease select one of the options.");
@@ -17,6 +20,9 @@ public class MenuDisplay {
         System.out.println("3. Exit the program.");
     }
 
+    /**
+     * Displays the diary menu.
+     */
     public static void diaryMenu() {
         System.out.println("--=[ Diary Menu ]=--");
         System.out.println("1. Write a new diary entry.");
@@ -25,6 +31,9 @@ public class MenuDisplay {
         System.out.println("4. Log out.");
     }
 
+    /**
+     * Displays the search menu.
+     */
     public static void searchDiaryMenu() {
         System.out.println("--=[ Search Menu ]=--");
         System.out.println("1. Search diary by title.");

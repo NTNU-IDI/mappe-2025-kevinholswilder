@@ -16,6 +16,10 @@ public class FlowHandler {
 
     private FlowHandler() {}
 
+    /**
+     * Starts the main flow of the program.
+     * @param input Scanner object.
+     */
     public static void startFlow(Scanner input) {
         int option = -1;
         while (option != 3) {
@@ -41,6 +45,10 @@ public class FlowHandler {
         }
     }
 
+    /**
+     * Handles the diary flow of the program.
+     * @param input Scanner object.
+     */
     public static void diaryFlow(Scanner input) {
         int option = -1;
         while (option != 4) {
@@ -61,6 +69,10 @@ public class FlowHandler {
         }
     }
 
+    /**
+     * Handles the search flow of the program.
+     * @param input Scanner object.
+     */
     public static void searchDiaryFlow(Scanner input) {
         int option = -1;
         while (option != 6) {
