@@ -85,9 +85,11 @@ public class FlowHandler {
             }
 
             switch (option) {
-                case 1 -> {
-                    // TODO - Implement functionality for searching diaries.
-                }
+                case 1 -> DiaryHandler.searchDiaryByTitle(input);
+                case 2 -> DiaryHandler.searchDiaryByDate(input);
+                case 3 -> DiaryHandler.searchDiaryByPeriod(input);
+                case 4 -> DiaryHandler.searchDiaryByAuthor(input);
+                case 5 -> DiaryHandler.searchDiaryByPrompt(input);
                 case 6 -> System.out.println("Returning to diary menu...");
             }
         }
