@@ -1,5 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.ui;
 
+import main.java.edu.ntnu.iir.bidata.flow.FlowHandler;
+
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
@@ -31,6 +33,7 @@ public class ConsoleUI {
             this.init();
         }
         System.out.println("Welcome to the cooking diary!");
+        FlowHandler.startFlow(this.scanner);
     }
 
 }
