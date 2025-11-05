@@ -4,7 +4,6 @@ import main.java.edu.ntnu.iir.bidata.models.Author;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Singleton class that ensures there only exists 1 instance of
@@ -18,7 +17,7 @@ public class AuthorRegister {
 
     private static AuthorRegister instance;
 
-    private final HashMap<UUID, Author> authorEntries;
+    private final HashMap<String, Author> authorEntries;
 
     /**
      * Representation of the database constructor.
@@ -52,7 +51,7 @@ public class AuthorRegister {
      * @param author adds an author to the database.
      */
     public void addAuthor(Author author) {
-        this.authorEntries.putIfAbsent(author.getAuthorId(), author);
+        this.authorEntries.putIfAbsent(author.getUsername().toLowerCase(), author);
     }
 
     /**
