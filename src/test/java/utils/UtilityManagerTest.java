@@ -22,4 +22,13 @@ public class UtilityManagerTest {
         Assert.assertEquals(0, stringBuilder.toString().length());
     }
 
+    @Test
+    public void ensureAlphabeticString() {
+        String string = "Thisisatest";
+
+        boolean isAlphabetic = string.chars().allMatch(Character::isAlphabetic);
+
+        Assert.assertTrue(isAlphabetic);
+    }
+
 }
