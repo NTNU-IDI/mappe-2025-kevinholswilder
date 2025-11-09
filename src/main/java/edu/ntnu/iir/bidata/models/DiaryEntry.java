@@ -76,8 +76,8 @@ public class DiaryEntry {
         return UtilityManager.capitalize(this.title) +
                 "\n------------------------" +
                 "\n" + this.content.trim() +
-                "\nDate: " + this.date +
                 "\n " +
+                "\nDate: " + this.date +
                 "\nAuthor: " + this.author.toString() +
                 "\n------------------------\n";
     }
