@@ -57,5 +57,4 @@ public class AuthorRegister {
         return this.authorEntries.values().stream().toList();
     }
 
-
 }
