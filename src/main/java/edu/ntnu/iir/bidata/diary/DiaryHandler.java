@@ -23,38 +23,49 @@ public class DiaryHandler {
      * @param input Takes in a scanner for user input.
      */
     public static void writeDiary(Scanner input) {
-        System.out.println("What's the title of your diary entry?");
-        String title = UtilityManager.ensureNonEmptyString(input);
+        // Check if the title already exists from the current author.
+        String title;
+        while (true) {
+            System.out.println("Enter the title of your recipe diary:");
+            title = UtilityManager.ensureNonEmptyString(input).trim();
 
-        System.out.println("What's the content of your diary entry (Please write 'exit' to stop writing)?");
+            boolean titleExists = RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser()) == null;
+            if (!titleExists) {
+                System.out.println("This recipe already exists, please try again.");
+            } else {
+                break;
+            }
+        }
+
+        System.out.println("Write the content for your cooking diary:\nType 'exit' to save and finish writing.");
         String content = UtilityManager.readMultiLineInput(input);
 
+        // Get the current author.
+        Author author = UserHandler.getCurrentUser();
         // Create a new diary entry.
-        DiaryEntry diaryEntry = new DiaryEntry(title, content);
-        diaryEntry.addAuthor(UserHandler.getCurrentUser());
+        DiaryEntry diaryEntry = new DiaryEntry(title, content, author);
 
         // Add the diary entry to the database.
         RegisterHandler.getDiaryDatabase().addDiaryEntry(diaryEntry);
-        System.out.println("Diary entry successfully written.");
+        System.out.println("Your recipe diary has been saved.");
     }
 
     /**
      * @param input Takes in a scanner for user input.
      */
     public static void deleteDiary(Scanner input) {
-        System.out.println("What's the title of the entry you're trying to delete?");
-        String title = UtilityManager.ensureNonEmptyString(input);
+        System.out.println("Enter the title of your recipe diary you're trying to delete:");
+        String title = UtilityManager.ensureNonEmptyString(input).trim();
 
-        // Check if the diary entry exists.
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntryByTitle(title);
+        // Check if the diary entry exists for the current author.
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser());
         if (diaryEntry == null) {
-            System.out.println("Entry not found, please try again.");
+            System.out.println("No entry was found.");
             return;
         }
 
-        // Deletion of diary entry.
         RegisterHandler.getDiaryDatabase().removeDiaryEntry(diaryEntry.getId());
-        System.out.println("Diary entry successfully deleted.");
+        System.out.println("Recipe diary has been deleted.");
     }
 
     /**
@@ -65,14 +76,13 @@ public class DiaryHandler {
         String title = UtilityManager.ensureNonEmptyString(input);
 
         // Check if the diary entry exists.
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntryByTitle(title);
-        if (diaryEntry == null) {
-            System.out.println("Entry not found, please try again.");
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitle(title);
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
             return;
         }
 
-        System.out.println("Diary entry found.");
-        System.out.println(diaryEntry);
+        listDiaries(diaryEntries);
     }
 
     /**
@@ -83,16 +93,13 @@ public class DiaryHandler {
         LocalDate date = UtilityManager.ensureValidDate(input);
 
         // Check if the diary entry exists.
-        List<DiaryEntry> diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntryByDate(date);
-        if (diaryEntry == null) {
-            System.out.println("Entry(ies) not found, please try again.");
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntryByDate(date);
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
             return;
         }
 
-        System.out.println("Diary(ies) entry found.");
-        for (DiaryEntry entry : diaryEntry) {
-            System.out.println(entry.toString());
-        }
+        listDiaries(diaryEntries);
     }
 
     /**
@@ -105,16 +112,13 @@ public class DiaryHandler {
         LocalDate endDate = UtilityManager.ensureValidDate(input);
 
         // Check if the diary entry exists.
-        List<DiaryEntry> diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntriesByPeriod(startDate, endDate);
-        if (diaryEntry == null) {
-            System.out.println("Entry(ies) not found, please try again.");
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByPeriod(startDate, endDate);
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
             return;
         }
 
-        System.out.println("Diary(ies) entry found.");
-        for (DiaryEntry entry : diaryEntry) {
-            System.out.println(entry.toString());
-        }
+        listDiaries(diaryEntries);
     }
 
     /**
@@ -132,16 +136,13 @@ public class DiaryHandler {
         }
 
         // Check if the diary entry exists.
-        List<DiaryEntry> diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntriesByAuthor(author);
-        if (diaryEntry.isEmpty()) {
-            System.out.println("Entry(ies) not found, please try again.");
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByAuthor(author);
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
             return;
         }
 
-        System.out.println("Diary(ies) entry found.");
-        for (DiaryEntry entry : diaryEntry) {
-            System.out.println(entry.toString());
-        }
+        listDiaries(diaryEntries);
     }
 
     /**
@@ -152,15 +153,36 @@ public class DiaryHandler {
         String prompt = UtilityManager.ensureNonEmptyString(input);
 
         // Check if the diary entry exists.
-        List<DiaryEntry> diaryEntry = RegisterHandler.getDiaryDatabase().getDiaryEntriesByPrompt(prompt);
-        if (diaryEntry.isEmpty()) {
-            System.out.println("Entry(ies) not found, please try again.");
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByPrompt(prompt);
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
             return;
         }
 
-        System.out.println("Diary(ies) entry found.");
-        for (DiaryEntry entry : diaryEntry) {
-            System.out.println(entry.toString());
+        listDiaries(diaryEntries);
+    }
+
+    /**
+     * Lists all diary entries in the register.
+     */
+    public static void exportDiaries() {
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesSortedByDate();
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
+            return;
+        }
+
+        listDiaries(diaryEntries);
+    }
+
+    /**
+     * Lists all objects of [DiaryEntry] in the given list.
+     * @param diaryEntries takes in a list of [DiaryEntry] objects.
+     */
+    private static void listDiaries(List<DiaryEntry> diaryEntries) {
+        System.out.println("=== Recipe Entries ===");
+        for (int i = 0; i < diaryEntries.size(); i++) {
+            System.out.println("#" + (i + 1) + " - " + diaryEntries.get(i));
         }
     }
 
