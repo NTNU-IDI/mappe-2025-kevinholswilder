@@ -125,10 +125,10 @@ public class DiaryRegister {
     }
 
     /**
-     * @return a sorted list of [DiaryEntry] objects, sorted by date.
+     * @return a sorted list of [DiaryEntry] objects, sorted after date.
      */
-    public List<DiaryEntry> sortDiaryEntriesByDate() {
-        return this.getDiaryEntryStream().sorted().toList();
+    public List<DiaryEntry> getDiaryEntriesSortedByDate() {
+        return this.getDiaryEntryStream().sorted(Comparator.comparing(DiaryEntry::getDate)).toList();
     }
 
     /**
