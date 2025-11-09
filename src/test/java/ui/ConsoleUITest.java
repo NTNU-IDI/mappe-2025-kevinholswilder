@@ -2,7 +2,7 @@ package test.java.ui;
 
 import org.junit.Assert;
 import org.junit.Test;
-import test.java.flow.FlowHandler;
+import main.java.edu.ntnu.iir.bidata.flow.FlowHandler;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
