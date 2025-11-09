@@ -65,4 +65,19 @@ public class UtilityManager {
         }
         return stringBuilder.toString();
     }
+
+    /**
+     * @return a string consisting of only alphabetic letters.
+     */
+    public static String ensureOnlyAlphabeticLetters(Scanner scanner) {
+        while (true) {
+            String string = scanner.nextLine();
+            if (!string.isEmpty() && string.chars().allMatch(Character::isAlphabetic)) {
+                return string;
+            } else {
+                System.out.println("Please make sure that the value you enter only consists out of alphabetic letters.\nFor example: 'johndoe' or 'janedoe'.\nYour username cannot contain any white space or special characters.");
+            }
+        }
+    }
+
 }
