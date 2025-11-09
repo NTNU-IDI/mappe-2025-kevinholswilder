@@ -26,13 +26,12 @@ public class UserHandler {
         // Check if the user exists.
         Author author = RegisterHandler.getAuthorDatabase().getAuthorByUsername(username);
         if (author == null) {
-            System.out.println("Invalid username, you're being sent back to the main menu.");
+            System.out.println("Could not find user with username: " + username + "\nYou're being sent back to the main menu.");
             return false;
         }
 
         // Login
-        System.out.println("Welcome " + author.getName() + "!");
-
+        System.out.println("Welcome " + UtilityManager.capitalize(author.getName()) + "!");
         // Set the current operating user.
         setAuthor(author);
         return true;
@@ -42,7 +41,7 @@ public class UserHandler {
         System.out.println("Please enter an username: ");
         String username = UtilityManager.ensureOnlyAlphabeticLetters(input);
 
-        // Check if the username exists.
+        // Check if the username already exists.
         Author author = RegisterHandler.getAuthorDatabase().getAuthorByUsername(username);
         if (author != null) {
             System.out.println("Username already exists, please try again.");
