@@ -1,8 +1,8 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
+import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
+
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
 import java.util.UUID;
 
 /**
@@ -14,33 +14,23 @@ import java.util.UUID;
 
 public class DiaryEntry {
 
-    private String title;
-    private String content;
-    private final HashMap<UUID, Author> authors;
+    private final String title;
+    private final String content;
+    private final Author author;
     private final LocalDate date;
     private final UUID diaryEntryId;
 
     /**
      * @param title Sets the title of a diary entry.
      * @param content Sets the content of a diary entry.
+     * @param author Sets the author of a diary entry.
      */
-    public DiaryEntry(String title, String content) {
+    public DiaryEntry(String title, String content, Author author) {
         this.title = title;
         this.content = content;
-        this.authors = new HashMap<>();
+        this.author = author;
         this.date = LocalDate.now();
         this.diaryEntryId = UUID.randomUUID();
-    }
-
-    /**
-     * @param title Sets the title of a diary entry.
-     * @throws IllegalArgumentException if the title is empty.
-     */
-    public void setTitle(String title) {
-        if (title.isEmpty()) {
-            throw new IllegalArgumentException("Title cannot be empty.");
-        }
-        this.title = title;
     }
 
     /**
@@ -51,21 +41,10 @@ public class DiaryEntry {
     }
 
     /**
-     * @return the authors of a diary entry.
+     * @return the author of a diary entry.
      */
-    public HashMap<UUID, Author> getAuthors() {
-        return this.authors;
-    }
-
-    /**
-     * @param content Sets the content of a diary entry.
-     * @throws IllegalArgumentException if the content is empty.
-     */
-    public void setContent(String content) {
-        if (content.isEmpty()) {
-            throw new IllegalArgumentException("Content cannot be empty.");
-        }
-        this.content = content;
+    public Author getAuthor() {
+        return this.author;
     }
 
     /**
@@ -83,23 +62,6 @@ public class DiaryEntry {
     }
 
     /**
-     * @param author Adds an author to a diary entry.
-     */
-    public void addAuthor(Author author) {
-        this.authors.putIfAbsent(
-                author.getAuthorId(),
-                author
-        );
-    }
-
-    /**
-     * @param author Removes an author from a diary entry.
-     */
-    public void removeAuthor(Author author) {
-        this.authors.remove(author.getAuthorId());
-    }
-
-    /**
      * @return ID of a diary entry.
      */
     public UUID getId() {
@@ -111,6 +73,13 @@ public class DiaryEntry {
      */
     @Override
     public String toString() {
-        return "\nTitle: " + this.title + "\nContent: " + this.content + "\nDate: " + this.date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "\nAuthors: " + this.authors.values();
+        return UtilityManager.capitalize(this.title) +
+                "\n------------------------" +
+                "\n" + this.content.trim() +
+                "\nDate: " + this.date +
+                "\n " +
+                "\nAuthor: " + this.author.toString() +
+                "\n------------------------\n";
     }
+
 }
