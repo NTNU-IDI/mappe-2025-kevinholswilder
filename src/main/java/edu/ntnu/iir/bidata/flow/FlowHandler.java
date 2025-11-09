@@ -64,7 +64,8 @@ public class FlowHandler {
                 case 1 -> DiaryHandler.writeDiary(input);
                 case 2 -> DiaryHandler.deleteDiary(input);
                 case 3 -> FlowHandler.searchDiaryFlow(input);
-                case 4 -> UserHandler.logout();
+                case 4 -> DiaryHandler.exportDiaries();
+                case 5 -> UserHandler.logout();
             }
         }
     }

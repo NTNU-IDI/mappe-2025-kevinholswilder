@@ -28,8 +28,8 @@ public class MenuDisplay {
         System.out.println("1. Write a new diary entry.");
         System.out.println("2. Delete an existing diary entry.");
         System.out.println("3. Search for diary entries.");
-        // TODO : Add option to export diaries.
-        System.out.println("4. Log out.");
+        System.out.println("4. Export all diary entries sorted after date.");
+        System.out.println("5. Log out.");
     }
 
     /**
