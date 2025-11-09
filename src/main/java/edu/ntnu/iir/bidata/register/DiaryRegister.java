@@ -113,7 +113,7 @@ public class DiaryRegister {
      */
     public List<DiaryEntry> getDiaryEntriesByAuthor(Author author) {
         return this.getDiaryEntryStream()
-                .filter(it -> it.getAuthors().containsKey(author.getAuthorId()))
+                .filter(it -> it.getAuthor().getAuthorId().equals(author.getAuthorId()))
                 .toList();
     }
 
