@@ -32,7 +32,6 @@ public class ConsoleUI {
         if (this.scanner == null) {
             this.init();
         }
-        System.out.println("Welcome to the cooking diary!");
         FlowHandler.startFlow(this.scanner);
     }
 
