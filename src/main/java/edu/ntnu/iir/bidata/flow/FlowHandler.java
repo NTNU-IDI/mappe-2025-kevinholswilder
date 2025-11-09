@@ -29,6 +29,7 @@ public class FlowHandler {
                 option = Integer.parseInt(input.nextLine());
             } catch (Exception e) {
                 System.out.println("Invalid input, please try again.");
+                continue;
             }
 
             switch (option) {
@@ -58,6 +59,7 @@ public class FlowHandler {
                 option = Integer.parseInt(input.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid option, please try again.");
+                continue;
             }
 
             switch (option) {
@@ -83,6 +85,7 @@ public class FlowHandler {
                 option = Integer.parseInt(input.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid option, please try again.");
+                continue;
             }
 
             switch (option) {
