@@ -1,5 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
+import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
+
 import java.util.UUID;
 
 /**
@@ -59,6 +61,6 @@ public class Author {
      */
     @Override
     public String toString() {
-        return this.name + " " + this.surname;
+        return UtilityManager.capitalize(this.getName()) + " " + UtilityManager.capitalize(this.getSurname());
     }
 }
