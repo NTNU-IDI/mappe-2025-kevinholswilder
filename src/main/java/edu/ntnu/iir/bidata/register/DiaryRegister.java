@@ -59,8 +59,21 @@ public class DiaryRegister {
     /**
      * @param title takes in a string.
      */
-    public DiaryEntry getDiaryEntryByTitle(String title) {
-        return this.getDiaryEntryStream().filter(it -> it.getTitle().equalsIgnoreCase(title)).findFirst().orElse(null);
+    public List<DiaryEntry> getDiaryEntriesByTitle(String title) {
+        return this.getDiaryEntryStream().filter(it -> it.getTitle().equalsIgnoreCase(title))
+                .toList();
+    }
+
+    /**
+     * @param title takes in a string.
+     * @param author takes in an [Author].
+     * @return a [DiaryEntry] object where the title and author match, if none match, it returns null.
+     */
+    public DiaryEntry getDiaryEntriesByTitleAndAuthor(String title, Author author) {
+        return this.getDiaryEntryStream()
+                .filter(it -> it.getTitle().equalsIgnoreCase(title) && it.getAuthor().getAuthorId().equals(author.getAuthorId()))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
