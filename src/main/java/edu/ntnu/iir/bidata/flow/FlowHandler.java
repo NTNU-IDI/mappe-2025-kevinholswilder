@@ -51,7 +51,7 @@ public class FlowHandler {
      */
     public static void diaryFlow(Scanner input) {
         int option = -1;
-        while (option != 4) {
+        while (option != 5) {
             MenuDisplay.diaryMenu();
 
             try {
