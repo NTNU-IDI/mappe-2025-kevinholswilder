@@ -39,8 +39,8 @@ public class UserHandler {
     }
 
     public static void register(Scanner input) {
-        System.out.println("Please enter your new username: ");
-        String username = UtilityManager.ensureNonEmptyString(input);
+        System.out.println("Please enter an username: ");
+        String username = UtilityManager.ensureOnlyAlphabeticLetters(input);
 
         // Check if the username exists.
         Author author = RegisterHandler.getAuthorDatabase().getAuthorByUsername(username);
