@@ -30,16 +30,18 @@ public class RegisterTest {
 
     @Test
     public void addDiaryEntryToRegister() {
-        DiaryEntry diaryEntry = new DiaryEntry("Taco", "1x Minced meat, 1x Cheese, 1x Sauce");
+        Author testAuthor = new Author("testAuthor", "Test", "Author");
+
+        DiaryEntry diaryEntry = new DiaryEntry("Taco", "1x Minced meat, 1x Cheese, 1x Sauce", testAuthor);
         RegisterHandler.getDiaryDatabase().addDiaryEntry(diaryEntry);
 
-        DiaryEntry diaryEntry1 = new DiaryEntry("", "");
+        DiaryEntry diaryEntry1 = new DiaryEntry("", "", testAuthor);
         RegisterHandler.getDiaryDatabase().addDiaryEntry(diaryEntry1);
 
         List<DiaryEntry> diaries = RegisterHandler.getDiaryDatabase().getDiaryEntries();
 
         Assert.assertSame(2, diaries.size()); // Expected 2
-        Assert.assertEquals("Taco", RegisterHandler.getDiaryDatabase().getDiaryEntryByTitle("Taco").getTitle());
+        Assert.assertEquals("Taco", RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitleAndAuthor("Taco", testAuthor).getTitle());
     }
 
     @Test
