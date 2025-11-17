@@ -25,10 +25,10 @@ public class MenuDisplay {
      */
     public static void diaryMenu() {
         System.out.println("--=[ Cooking Diary ]=--");
-        System.out.println("1. Write a new diary entry.");
-        System.out.println("2. Delete an existing diary entry.");
-        System.out.println("3. Search for diary entries.");
-        System.out.println("4. Export all diary entries sorted after date.");
+        System.out.println("1. Write a new cooking diary entry.");
+        System.out.println("2. Delete an existing entry.");
+        System.out.println("3. Search through diary entries.");
+        System.out.println("4. Export all diary sorted by date.");
         System.out.println("5. Log out.");
     }
 
@@ -37,11 +37,11 @@ public class MenuDisplay {
      */
     public static void searchDiaryMenu() {
         System.out.println("--=[ Cooking Diary ]=--");
-        System.out.println("1. Search diary by title.");
-        System.out.println("2. Search diaries by date.");
-        System.out.println("3. Search diaries by period.");
-        System.out.println("4. Search diaries by author.");
-        System.out.println("5. Search diary by prompt.");
-        System.out.println("6. Return to diary menu.");
+        System.out.println("1. Search recipe by title.");
+        System.out.println("2. Search recipe(s) by date.");
+        System.out.println("3. Search recipe(s) by period.");
+        System.out.println("4. Search recipe(s) by author.");
+        System.out.println("5. Search recipe(s) by prompt.");
+        System.out.println("6. Return back to diary menu.");
     }
 }
