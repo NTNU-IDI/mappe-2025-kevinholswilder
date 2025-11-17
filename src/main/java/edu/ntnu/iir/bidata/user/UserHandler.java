@@ -44,7 +44,7 @@ public class UserHandler {
         // Check if the username already exists.
         Author author = RegisterHandler.getAuthorDatabase().getAuthorByUsername(username);
         if (author != null) {
-            System.out.println("Username already exists, please try again.");
+            System.out.println("Username already exists, you're being sent back to the main menu.");
             return;
         }
 

@@ -31,7 +31,7 @@ public class DiaryHandler {
 
             boolean titleExists = RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser()) == null;
             if (!titleExists) {
-                System.out.println("This recipe already exists, please try again.");
+                System.out.println("You already have a recipe with this title, please enter a new title.");
             } else {
                 break;
             }
