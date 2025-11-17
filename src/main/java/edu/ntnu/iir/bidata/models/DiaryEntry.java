@@ -1,8 +1,10 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
+import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.UUID;
 
 /**
@@ -19,6 +21,7 @@ public class DiaryEntry {
     private final Author author;
     private final LocalDate date;
     private final UUID diaryEntryId;
+    private HashSet<RecipeLabel> recipeLabels;
 
     /**
      * @param title Sets the title of a diary entry.
@@ -31,6 +34,7 @@ public class DiaryEntry {
         this.author = author;
         this.date = LocalDate.now();
         this.diaryEntryId = UUID.randomUUID();
+        this.recipeLabels = new HashSet<>();
     }
 
     /**
@@ -69,6 +73,20 @@ public class DiaryEntry {
     }
 
     /**
+     * @return the labels of a diary entry.
+     */
+    public HashSet<RecipeLabel> getRecipeLabels() {
+        return this.recipeLabels;
+    }
+
+    /**
+     * @param recipeLabel to add in the recipe labels.
+     */
+    public void addRecipeLabel(RecipeLabel recipeLabel) {
+        this.recipeLabels.add(recipeLabel);
+    }
+
+    /**
      * @return String representation of a diary entry.
      */
     @Override
@@ -76,6 +94,8 @@ public class DiaryEntry {
         return UtilityManager.capitalize(this.title) +
                 "\n------------------------" +
                 "\n" + this.content.trim() +
+                "\n " +
+                "\nLabels: " + this.recipeLabels.stream().map(label -> UtilityManager.capitalize(label.toString().toLowerCase())).toList() +
                 "\n " +
                 "\nDate: " + this.date +
                 "\nAuthor: " + this.author.toString() +

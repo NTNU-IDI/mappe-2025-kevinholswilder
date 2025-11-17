@@ -42,6 +42,7 @@ public class MenuDisplay {
         System.out.println("3. Search recipe(s) by period.");
         System.out.println("4. Search recipe(s) by author.");
         System.out.println("5. Search recipe(s) by prompt.");
-        System.out.println("6. Return back to diary menu.");
+        System.out.println("6. Search recipe(s) by label.");
+        System.out.println("7. Return back to diary menu.");
     }
 }

@@ -1,5 +1,6 @@
 package main.java.edu.ntnu.iir.bidata.register;
 
+import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 
@@ -104,6 +105,16 @@ public class DiaryRegister {
     public List<DiaryEntry> getDiaryEntriesByPrompt(String prompt) {
         return this.getDiaryEntryStream()
                 .filter(it -> it.getContent().toLowerCase().contains(prompt.toLowerCase()))
+                .toList();
+    }
+
+    /**
+     * @param recipeLabel takes in a string.
+     * @return a list with [DiaryEntry] objects where the list of label contains the given [RecipeLabel].
+     */
+    public List<DiaryEntry> getDiaryEntriesByLabel(RecipeLabel recipeLabel) {
+        return this.getDiaryEntryStream()
+                .filter(it -> it.getRecipeLabels().contains(recipeLabel))
                 .toList();
     }
 

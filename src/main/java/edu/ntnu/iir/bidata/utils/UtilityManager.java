@@ -2,6 +2,7 @@ package main.java.edu.ntnu.iir.bidata.utils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -64,6 +65,13 @@ public class UtilityManager {
             stringBuilder.append(line).append("\n");
         }
         return stringBuilder.toString();
+    }
+
+    /**
+     * @return a list of strings containing all the lines read from the scanner.
+     */
+    public static List<String> readMultiLineInputList(Scanner scanner) {
+        return List.of(readMultiLineInput(scanner).split("\n"));
     }
 
     /**

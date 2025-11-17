@@ -78,7 +78,7 @@ public class FlowHandler {
      */
     public static void searchDiaryFlow(Scanner input) {
         int option = -1;
-        while (option != 6) {
+        while (option != 7) {
             MenuDisplay.searchDiaryMenu();
 
             try {
@@ -94,7 +94,8 @@ public class FlowHandler {
                 case 3 -> DiaryHandler.searchDiaryByPeriod(input);
                 case 4 -> DiaryHandler.searchDiaryByAuthor(input);
                 case 5 -> DiaryHandler.searchDiaryByPrompt(input);
-                case 6 -> System.out.println("Returning to diary menu...");
+                case 6 -> DiaryHandler.searchDiaryByLabel(input);
+                case 7 -> System.out.println("Returning to diary menu...");
             }
         }
     }

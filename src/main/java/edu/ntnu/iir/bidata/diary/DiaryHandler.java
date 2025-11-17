@@ -1,5 +1,6 @@
 package main.java.edu.ntnu.iir.bidata.diary;
 
+import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
@@ -44,6 +45,27 @@ public class DiaryHandler {
         Author author = UserHandler.getCurrentUser();
         // Create a new diary entry.
         DiaryEntry diaryEntry = new DiaryEntry(title, content, author);
+
+        // Add (optional) labels to the diary entry.
+        System.out.println("Add one or more labels to your recipe (optional):\nType 'exit' to finish or skip.");
+        System.out.println("Available Labels:");
+        for (RecipeLabel label : RecipeLabel.values()) {
+            System.out.println(" - " + label.name());
+        }
+
+        List<String> labelList = UtilityManager.readMultiLineInputList(input);
+        for (String labelString : labelList) {
+            try {
+                // Parse the string to a [RecipeLabel] object.
+                RecipeLabel label = RecipeLabel.valueOf(labelString.toUpperCase());
+                diaryEntry.addRecipeLabel(label);
+            } catch (IllegalArgumentException e) {
+                // If the string is empty, ignore.
+                if (!labelString.isEmpty()) {
+                    System.out.println("Ignoring invalid label: " + labelString + ".");
+                }
+            }
+        }
 
         // Add the diary entry to the database.
         RegisterHandler.getDiaryDatabase().addDiaryEntry(diaryEntry);
@@ -162,6 +184,35 @@ public class DiaryHandler {
 
         // Check if the diary entry exists.
         List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByPrompt(prompt);
+        if (diaryEntries.isEmpty()) {
+            System.out.println("No entries were found.");
+            return;
+        }
+
+        listDiaries(diaryEntries);
+    }
+
+    /**
+     * @param input Takes in a scanner for user input.
+     */
+    public static void searchDiaryByLabel(Scanner input) {
+        System.out.println("Please enter the label you're looking for:");
+        System.out.println("Available Labels:");
+        for (RecipeLabel label : RecipeLabel.values()) {
+            System.out.println(" - " + label.name());
+        }
+        String labelString = UtilityManager.ensureNonEmptyString(input);
+
+        RecipeLabel label;
+        try {
+            label = RecipeLabel.valueOf(labelString.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid label, please try again.");
+            return;
+        }
+
+        // Check if the diary entry exists.
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByLabel(label);
         if (diaryEntries.isEmpty()) {
             System.out.println("No entries were found.");
             return;
