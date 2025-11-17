@@ -54,7 +54,15 @@ public class DiaryHandler {
      * @param input Takes in a scanner for user input.
      */
     public static void deleteDiary(Scanner input) {
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByAuthor(UserHandler.getCurrentUser());
+        if (diaryEntries.isEmpty()) {
+            System.out.println("You have not written any recipes yet.");
+            return;
+        }
         System.out.println("Enter the title of your recipe diary you're trying to delete:");
+        for (int i = 0; i < diaryEntries.size(); i++) {
+            System.out.println("#" + (i + 1) + " - " + diaryEntries.get(i).getTitle());
+        }
         String title = UtilityManager.ensureNonEmptyString(input).trim();
 
         // Check if the diary entry exists for the current author.
