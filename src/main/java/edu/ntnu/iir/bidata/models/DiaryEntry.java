@@ -21,7 +21,7 @@ public class DiaryEntry {
     private final Author author;
     private final LocalDate date;
     private final UUID diaryEntryId;
-    private HashSet<RecipeLabel> recipeLabels;
+    private final HashSet<RecipeLabel> recipeLabels;
 
     /**
      * @param title Sets the title of a diary entry.
