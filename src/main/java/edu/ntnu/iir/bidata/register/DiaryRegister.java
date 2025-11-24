@@ -26,11 +26,7 @@ public class DiaryRegister {
      * Representation of the database constructor.
      */
     private DiaryRegister() {
-        try {
-            this.diaryEntries = new HashMap<>();
-        } catch (Exception e) {
-            throw new RuntimeException("Could not establish database.", e.getCause());
-        }
+        this.diaryEntries = new HashMap<>();
     }
 
     /**
