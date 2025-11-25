@@ -25,6 +25,7 @@ public class FlowHandler {
         while (option != 3) {
             MenuDisplay.mainMenu();
 
+            // TODO - Check if default case is better than handling it with a try-catch block.
             try {
                 option = Integer.parseInt(input.nextLine());
             } catch (Exception e) {

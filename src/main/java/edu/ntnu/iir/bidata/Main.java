@@ -16,4 +16,5 @@ public class Main {
         consoleUI.init();
         consoleUI.start();
     }
+
 }

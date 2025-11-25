@@ -19,6 +19,7 @@ public class DiaryEntry {
     private final String title;
     private final String content;
     private final Author author;
+    // TODO - Change to LocalDateTime. Also possibly change the format to European pattern (dd.MM.yyyy)
     private final LocalDate date;
     private final UUID diaryEntryId;
     private final HashSet<RecipeLabel> recipeLabels;
