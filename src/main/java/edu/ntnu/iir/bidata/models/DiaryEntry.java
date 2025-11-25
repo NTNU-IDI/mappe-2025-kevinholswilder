@@ -4,6 +4,8 @@ import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.HashSet;
 import java.util.UUID;
 
@@ -19,7 +21,6 @@ public class DiaryEntry {
     private final String title;
     private final String content;
     private final Author author;
-    // TODO - Change to LocalDateTime. Also possibly change the format to European pattern (dd.MM.yyyy)
     private final LocalDate date;
     private final UUID diaryEntryId;
     private final HashSet<RecipeLabel> recipeLabels;
@@ -98,7 +99,7 @@ public class DiaryEntry {
                 "\n " +
                 "\nLabels: " + this.recipeLabels.stream().map(label -> UtilityManager.capitalize(label.toString().toLowerCase())).toList() +
                 "\n " +
-                "\nDate: " + this.date +
+                "\nDate: " + DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).format(this.date) +
                 "\nAuthor: " + this.author.toString() +
                 "\n------------------------\n";
     }
