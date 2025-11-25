@@ -1,5 +1,7 @@
 package test.java;
 
+import test.java.models.AuthorTest;
+import test.java.models.DiaryEntryTest;
 import test.java.register.RegisterTest;
 import test.java.ui.ConsoleUITest;
 import test.java.utils.UtilityManagerTest;
@@ -14,15 +16,24 @@ import test.java.utils.UtilityManagerTest;
 public class MainTest {
 
     public static void main(String[] args) {
-        // RegisterTest registerTest = new RegisterTest();
-        // registerTest.startTests();
+        // Model Test
+        AuthorTest authorTest = new AuthorTest();
+        authorTest.startAuthorTest();
 
-        // UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
-        // System.out.println("Enter a value to test the utility manager:");
-        // utilityManagerTest.readMultiLineInput();
+        DiaryEntryTest diaryEntryTest = new DiaryEntryTest();
+        diaryEntryTest.startDiaryEntryTest();
 
+        // Register Test
+        RegisterTest registerTest = new RegisterTest();
+        registerTest.startRegisterTest();
+
+        // UI Test
         ConsoleUITest consoleUITest = new ConsoleUITest();
-        consoleUITest.start();
+        consoleUITest.startUITest();
+
+        // Utility Test
+        UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
+        utilityManagerTest.startUtilityManagerTest();
     }
 
 }

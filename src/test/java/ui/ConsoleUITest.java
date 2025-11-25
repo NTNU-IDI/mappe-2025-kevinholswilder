@@ -30,7 +30,7 @@ public class ConsoleUITest {
      * Starts the console UI.
      */
     @Test
-    public void start() {
+    public void startUITest() {
         if (this.scanner == null) {
             this.init();
         }
