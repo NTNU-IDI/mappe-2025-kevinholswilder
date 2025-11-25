@@ -156,6 +156,11 @@ public class DiaryHandler {
      */
     public static void searchDiaryByAuthor(Scanner input) {
         System.out.println("What's the username of the author you're trying to search for?");
+        // List all authors.
+        List<Author> authors = RegisterHandler.getAuthorDatabase().getAuthors();
+        for (int i = 0; i < authors.size(); i++) {
+            System.out.println("#" + (i + 1) + " - " + authors.get(i).getUsername());
+        }
         String username = UtilityManager.ensureNonEmptyString(input);
 
         // Check if the author exists.
