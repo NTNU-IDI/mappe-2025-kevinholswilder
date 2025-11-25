@@ -119,7 +119,7 @@ public class DiaryHandler {
      * @param input Takes in a scanner for user input.
      */
     public static void searchDiaryByDate(Scanner input) {
-        System.out.println("What's the date of the entry(ies) you're trying to search for (Example: yyyy-MM-dd)?");
+        System.out.println("What's the date of the entry(ies) you're trying to search for (Example: YYYY-MM-DD)?");
         LocalDate date = UtilityManager.ensureValidDate(input);
 
         // Check if the diary entry exists.
