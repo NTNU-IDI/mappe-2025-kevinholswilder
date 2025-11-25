@@ -53,7 +53,7 @@ public class FlowHandler {
      */
     public static void diaryFlow(Scanner input) {
         int option = -1;
-        while (option != 5) {
+        while (option != 6) {
             MenuDisplay.diaryMenu();
 
             try {
@@ -68,7 +68,8 @@ public class FlowHandler {
                 case 2 -> DiaryHandler.deleteDiary(input);
                 case 3 -> FlowHandler.searchDiaryFlow(input);
                 case 4 -> DiaryHandler.exportDiaries();
-                case 5 -> UserHandler.logout();
+                case 5 -> DiaryHandler.exportAuthorStatistics();
+                case 6 -> UserHandler.logout();
             }
         }
     }

@@ -29,7 +29,8 @@ public class MenuDisplay {
         System.out.println("2. Delete an existing entry.");
         System.out.println("3. Search through diary entries.");
         System.out.println("4. Export all diary sorted by date.");
-        System.out.println("5. Log out.");
+        System.out.println("5. Show author statistics.");
+        System.out.println("6. Log out.");
     }
 
     /**

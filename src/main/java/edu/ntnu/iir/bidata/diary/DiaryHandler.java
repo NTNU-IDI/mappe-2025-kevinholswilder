@@ -240,6 +240,22 @@ public class DiaryHandler {
     }
 
     /**
+     * Lists all authors and the number of recipes they've written.
+     */
+    public static void exportAuthorStatistics() {
+        List<Author> authors = RegisterHandler.getAuthorDatabase().getAuthors();
+
+        System.out.println("Number of recipes written by each author:");
+        System.out.println("-----------------------------------------");
+
+        for (Author author : authors) {
+            List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryDatabase().getDiaryEntriesByAuthor(author);
+            int diaryCount = diaryEntries.size();
+            System.out.println(author.toString() + ": " + diaryCount);
+        }
+    }
+
+    /**
      * Lists all objects of [DiaryEntry] in the given list.
      * @param diaryEntries takes in a list of [DiaryEntry] objects.
      */
