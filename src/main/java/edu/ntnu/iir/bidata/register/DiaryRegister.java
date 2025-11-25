@@ -32,7 +32,7 @@ public class DiaryRegister {
     /**
      * @return the single instance of the database.
      */
-    public static DiaryRegister getInstance() {
+    static DiaryRegister getInstance() {
         if (instance == null) {
             instance = new DiaryRegister();
         }

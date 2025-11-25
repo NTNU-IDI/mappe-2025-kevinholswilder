@@ -29,7 +29,7 @@ public class AuthorRegister {
     /**
      * @return the single instance of the database.
      */
-    public static AuthorRegister getInstance() {
+    static AuthorRegister getInstance() {
         if (instance == null) {
             instance = new AuthorRegister();
         }
