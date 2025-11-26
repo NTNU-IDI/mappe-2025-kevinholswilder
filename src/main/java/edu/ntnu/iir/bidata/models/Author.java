@@ -16,7 +16,6 @@ public class Author {
     private final String username;
     private final String name;
     private final String surname;
-    private final UUID authorId;
 
     /**
      * @param name Sets the name of an author.
@@ -25,7 +24,6 @@ public class Author {
         this.username = username;
         this.name = name;
         this.surname = surname;
-        this.authorId = UUID.randomUUID();
     }
 
     /**
@@ -50,14 +48,9 @@ public class Author {
     }
 
     /**
-     * @return the id of an author.
-     */
-    public UUID getAuthorId() {
-        return this.authorId;
-    }
-
-    /**
-     * @return String representation of an author.
+     * Returns a formatted string representation of an author, where the name and surname are capitalized.
+     *
+     * @return a string in the format of "Name Surname".
      */
     @Override
     public String toString() {

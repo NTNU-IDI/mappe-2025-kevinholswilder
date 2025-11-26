@@ -68,7 +68,7 @@ public class DiaryRegister {
      */
     public DiaryEntry getDiaryEntriesByTitleAndAuthor(String title, Author author) {
         return this.getDiaryEntryStream()
-                .filter(it -> it.getTitle().equalsIgnoreCase(title) && it.getAuthor().getAuthorId().equals(author.getAuthorId()))
+                .filter(it -> it.getTitle().equalsIgnoreCase(title) && it.getAuthor().getUsername().equalsIgnoreCase(author.getUsername()))
                 .findFirst()
                 .orElse(null);
     }
@@ -120,7 +120,7 @@ public class DiaryRegister {
      */
     public List<DiaryEntry> getDiaryEntriesByAuthor(Author author) {
         return this.getDiaryEntryStream()
-                .filter(it -> it.getAuthor().getAuthorId().equals(author.getAuthorId()))
+                .filter(it -> it.getAuthor().getUsername().equalsIgnoreCase(author.getUsername()))
                 .toList();
     }
 
