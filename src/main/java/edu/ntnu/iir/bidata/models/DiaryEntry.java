@@ -101,6 +101,18 @@ public class DiaryEntry {
     }
 
     /**
+     * Formats the recipe labels into a string.
+     * @return a formatted string of the recipe labels.
+     */
+    private String getFormattedLabels() {
+        if (this.recipeLabels.isEmpty()) {
+            return "None";
+        } else {
+            return String.join(", ", this.recipeLabels.stream().map(label -> UtilityManager.capitalize(label.toString().toLowerCase())).toList());
+        }
+    }
+
+    /**
      * @return a formatted string representation of a {@link DiaryEntry}.
      */
     @Override
@@ -109,7 +121,7 @@ public class DiaryEntry {
                 "\n------------------------" +
                 "\n" + this.content.trim() +
                 "\n " +
-                "\nLabels: " + this.recipeLabels.stream().map(label -> UtilityManager.capitalize(label.toString().toLowerCase())).toList() +
+                "\nLabels: " + this.getFormattedLabels() +
                 "\n " +
                 "\nDate: " + DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).format(this.date) +
                 "\nAuthor: " + this.author.toString() +
