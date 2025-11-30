@@ -92,7 +92,7 @@ public class DiaryRegister {
      * @param end takes in a {@link LocalDate} of the end of the period.
      * @return a list with {@link DiaryEntry} objects where the date is between the given dates.
      */
-    public List<DiaryEntry> getDiaryEntriesByPeriod(LocalDate start, LocalDate end) {
+    public List<DiaryEntry> getDiaryEntriesBetweenPeriod(LocalDate start, LocalDate end) {
         return this.getDiaryEntryStream()
                 .filter(it -> !it.getDate().isBefore(start) && !it.getDate().isAfter(end))
                 .toList();
