@@ -146,7 +146,7 @@ public class DiaryHandler {
      * @param input a {@link Scanner} object to read user input.
      */
     public static void searchDiaryByDate(Scanner input) {
-        System.out.println("What's the date of the entry(ies) you're trying to search for (Example: YYYY-MM-DD)?");
+        System.out.println("What's the date of the entry(ies) you're trying to search for (Format: YYYY-MM-DD)?");
         LocalDate date = UtilityManager.ensureValidDate(input);
 
         // Check if the diary entry exists.
@@ -166,9 +166,9 @@ public class DiaryHandler {
      * @param input a {@link Scanner} object to read user input.
      */
     public static void searchDiaryByPeriod(Scanner input) {
-        System.out.println("What's the start date of the period you're trying to search for?");
+        System.out.println("What's the start date of the period you're trying to search for (Format: YYYY-MM-DD)?");
         LocalDate startDate = UtilityManager.ensureValidDate(input);
-        System.out.println("What's the end date of the period you're trying to search for?");
+        System.out.println("What's the end date of the period you're trying to search for (Format: YYYY-MM-DD)?");
         LocalDate endDate = UtilityManager.ensureValidDate(input);
 
         // Check if the diary entry exists.

@@ -41,7 +41,7 @@ public class UtilityManager {
             try {
                 return LocalDate.parse(string, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             } catch (Exception e) {
-                System.out.println("Please make sure that the date you entered is valid (Example: YYYY-MM-DD).");
+                System.out.println("Please make sure that the date you entered is valid (Format: YYYY-MM-DD).");
             }
         }
     }
