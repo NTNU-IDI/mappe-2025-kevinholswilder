@@ -36,7 +36,7 @@ public class UserHandler {
      */
     public static boolean login(Scanner input) {
         System.out.println("Please enter your username: ");
-        String username = UtilityManager.ensureNonEmptyString(input);
+        String username = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Check if the user exists.
         Author author = RegisterHandler.getAuthorRegister().getAuthorByUsername(username);
@@ -72,10 +72,10 @@ public class UserHandler {
         }
 
         System.out.println("Please enter your name: ");
-        String name = UtilityManager.ensureNonEmptyString(input);
+        String name = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         System.out.println("Please enter your surname: ");
-        String surname = UtilityManager.ensureNonEmptyString(input);
+        String surname = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Register the new author.
         Author newAuthor = new Author(username, name, surname);

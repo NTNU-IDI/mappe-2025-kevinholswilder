@@ -16,15 +16,15 @@ public class UtilityManager {
 
     /**
      * @param input a {@link Scanner} object to read user input.
-     * @return a non-empty string.
+     * @return a non-empty trimmed string.
      */
-    public static String ensureNonEmptyString(Scanner input) {
+    public static String ensureNonEmptyTrimmedString(Scanner input) {
         while (true) {
             String string = input.nextLine();
             if (string.isEmpty()) {
                 System.out.println("Please make sure that the value you entered is not empty.");
             } else {
-                return string;
+                return string.trim();
             }
         }
     }

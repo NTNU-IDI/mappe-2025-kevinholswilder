@@ -47,7 +47,7 @@ public class DiaryHandler {
         String title;
         while (true) {
             System.out.println("Enter the title of your recipe diary:");
-            title = UtilityManager.ensureNonEmptyString(input).trim();
+            title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
             boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser()) == null;
             if (!titleExists) {
@@ -106,7 +106,7 @@ public class DiaryHandler {
         for (int i = 0; i < diaryEntries.size(); i++) {
             System.out.println("#" + (i + 1) + " - " + diaryEntries.get(i).getTitle());
         }
-        String title = UtilityManager.ensureNonEmptyString(input).trim();
+        String title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Check if the diary entry exists for the current author.
         DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser());
@@ -127,7 +127,7 @@ public class DiaryHandler {
      */
     public static void searchDiaryByTitle(Scanner input) {
         System.out.println("What's the title of the entry you're trying to search for?");
-        String title = UtilityManager.ensureNonEmptyString(input);
+        String title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Check if the diary entry exists.
         List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitle(title);
@@ -194,7 +194,7 @@ public class DiaryHandler {
         for (int i = 0; i < authors.size(); i++) {
             System.out.println("#" + (i + 1) + " - " + authors.get(i).getUsername());
         }
-        String username = UtilityManager.ensureNonEmptyString(input);
+        String username = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Check if the author exists.
         Author author = RegisterHandler.getAuthorRegister().getAuthorByUsername(username);
@@ -221,7 +221,7 @@ public class DiaryHandler {
      */
     public static void searchDiaryByPrompt(Scanner input) {
         System.out.println("Please enter your search prompt:");
-        String prompt = UtilityManager.ensureNonEmptyString(input);
+        String prompt = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Check if the diary entry exists.
         List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByPrompt(prompt);
@@ -245,7 +245,7 @@ public class DiaryHandler {
         for (RecipeLabel label : RecipeLabel.values()) {
             System.out.println(" - " + label.name());
         }
-        String labelString = UtilityManager.ensureNonEmptyString(input);
+        String labelString = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         RecipeLabel label;
         try {
