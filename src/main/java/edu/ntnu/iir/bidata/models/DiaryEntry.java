@@ -1,6 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
 import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
+import main.java.edu.ntnu.iir.bidata.user.UserHandler;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.time.LocalDate;
@@ -10,10 +11,18 @@ import java.util.HashSet;
 import java.util.UUID;
 
 /**
- * Representation of a diary entry
+ * <p>Represents a diary entry with a unique id, title, content, author, date and labels.
+ * Additionally, this class provides both getter and helper methods to access the diary entry's attributes.</p>
+ *
+ * Example usage:
+ * <pre>
+ *     DiaryEntry diaryEntry = new DiaryEntry("Chicken Curry", "A simple curry recipe.", UserHandler.getCurrentUser());
+ *     System.out.println(diaryEntry.getTitle()); // Chicken Curry
+ * </pre>
  *
  * @Author Kevin Holswilder
- * @Date 12/10/2025
+ * @Date 2025/10/12
+ * @see UserHandler#getCurrentUser() to see how the author is obtained.
  */
 
 public class DiaryEntry {
@@ -26,6 +35,9 @@ public class DiaryEntry {
     private final HashSet<RecipeLabel> recipeLabels;
 
     /**
+     * Creates a new {@link DiaryEntry} object with the given parameters.
+     * The diary entry's id is generated randomly using a {@link UUID}.
+     *
      * @param title Sets the title of a diary entry.
      * @param content Sets the content of a diary entry.
      * @param author Sets the author of a diary entry.
@@ -89,7 +101,7 @@ public class DiaryEntry {
     }
 
     /**
-     * @return String representation of a diary entry.
+     * @return a formatted string representation of a {@link DiaryEntry}.
      */
     @Override
     public String toString() {

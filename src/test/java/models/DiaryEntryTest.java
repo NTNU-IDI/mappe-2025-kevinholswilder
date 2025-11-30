@@ -7,14 +7,21 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * DiaryEntry Test Class
+ * Unit tests for the {@link DiaryEntry} class.
  *
- * @Author Kevin Holswilder
- * @Date 25/11/2025
+ * <p>
+ *     This class tests the functionality of the {@link DiaryEntry} class.
+ * </p>
+ *
+ * @author Kevin Holswilder
+ * @Date 2025/11/25
  */
 
 public class DiaryEntryTest {
 
+    /**
+     * Tests the functionality of the {@link DiaryEntry} class, and verifies that the attributes are set correctly.
+     */
     @Test
     public void testDiaryEntry() {
         Author author = new Author("supermario", "Mario", "Mario");
@@ -32,6 +39,9 @@ public class DiaryEntryTest {
         Assert.assertFalse(diaryEntry.getRecipeLabels().contains(RecipeLabel.VEGAN));
     }
 
+    /**
+     * Starts the diary entry test.
+     */
     public void startDiaryEntryTest() {
         this.testDiaryEntry();
     }

@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * UtilityManager that contains helper methods.
+ * This class provides static utility methods for validating user input.
  *
  * @Author Kevin Holswilder
- * @Date 25/10/2025
+ * @Date 2025/10/25
  */
 
 public class UtilityManager {
 
     /**
-     * @param input Scanner object.
+     * @param input a {@link Scanner} object to read user input.
      * @return a non-empty string.
      */
     public static String ensureNonEmptyString(Scanner input) {
@@ -30,8 +30,10 @@ public class UtilityManager {
     }
 
     /**
-     * @param input Scanner object.
-     * @return an object of [LocalDate].
+     * Prompts the user to enter a date in the format YYYY-MM-DD.
+     *
+     * @param input a {@link Scanner} object to read user input.
+     * @return a {@link LocalDate} object.
      */
     public static LocalDate ensureValidDate(Scanner input) {
         while (true) {
@@ -53,12 +55,13 @@ public class UtilityManager {
     }
 
     /**
+     * @param input a {@link Scanner} object to read user input.
      * @return a string consisting of all the lines read from the scanner.
      */
-    public static String readMultiLineInput(Scanner scanner) {
+    public static String readMultiLineInput(Scanner input) {
         StringBuilder stringBuilder = new StringBuilder();
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
+        while (input.hasNextLine()) {
+            String line = input.nextLine();
             if (line.equalsIgnoreCase("exit")) {
                 break;
             }
@@ -68,18 +71,22 @@ public class UtilityManager {
     }
 
     /**
-     * @return a list of strings containing all the lines read from the scanner.
+     * @param input a {@link Scanner} object to read user input.
+     * @return a list of strings containing all the lines read from the {@link Scanner}.
      */
-    public static List<String> readMultiLineInputList(Scanner scanner) {
-        return List.of(readMultiLineInput(scanner).split("\n"));
+    public static List<String> readMultiLineInputList(Scanner input) {
+        return List.of(readMultiLineInput(input).split("\n"));
     }
 
     /**
+     * This method ensures that the user enters only alphabetic letters, which prevents users from entering special characters, or white space.
+     *
+     * @param input a {@link Scanner} object to read user input.
      * @return a string consisting of only alphabetic letters.
      */
-    public static String ensureOnlyAlphabeticLetters(Scanner scanner) {
+    public static String ensureOnlyAlphabeticLetters(Scanner input) {
         while (true) {
-            String string = scanner.nextLine();
+            String string = input.nextLine();
             if (!string.isEmpty() && string.chars().allMatch(Character::isAlphabetic)) {
                 return string;
             } else {

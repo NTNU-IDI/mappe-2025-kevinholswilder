@@ -6,11 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Singleton class that ensures there only exists 1 instance of
- * the local database to ensure a single source of truth
+ * Represents the {@link Author} register.
+ *
+ * <p>This class is a singleton class that ensures there only exists 1 instance of
+ * the local register at a time to ensure a single source of truth throughout the runtime of the program.</p>
  *
  * @Author Kevin Holswilder
- * @Date 21/10/2025
+ * @Date 2025/10/21
+ * @see <a href="https://www.geeksforgeeks.org/java/singleton-class-java/">Singleton Method Design Pattern in Java</a>
  */
 
 public class AuthorRegister {
@@ -20,14 +23,14 @@ public class AuthorRegister {
     private final HashMap<String, Author> authorEntries;
 
     /**
-     * Representation of the database constructor.
+     * Private constructor to prevent instantiation.
      */
     private AuthorRegister() {
         this.authorEntries = new HashMap<>();
     }
 
     /**
-     * @return the single instance of the database.
+     * @return the single instance of the register.
      */
     static AuthorRegister getInstance() {
         if (instance == null) {
@@ -37,21 +40,21 @@ public class AuthorRegister {
     }
 
     /**
-     * @return an [Author] based on the username
+     * @return a {@link Author} where the username matches the query, if no match is found, returns null.
      */
     public Author getAuthorByUsername(String username) {
         return this.authorEntries.getOrDefault(username.toLowerCase(), null);
     }
 
     /**
-     * @param author adds an author to the database.
+     * @param author adds an {@link Author} to the register.
      */
     public void addAuthor(Author author) {
         this.authorEntries.putIfAbsent(author.getUsername().toLowerCase(), author);
     }
 
     /**
-     * @return A list of all authors.
+     * @return A list of all {@link Author} objects in the register.
      */
     public List<Author> getAuthors() {
         return this.authorEntries.values().stream().toList();

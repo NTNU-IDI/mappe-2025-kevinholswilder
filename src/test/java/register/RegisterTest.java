@@ -9,20 +9,30 @@ import org.junit.Test;
 import java.util.List;
 
 /**
- * RegisterHandler Test Class
+ * Unit tests for the {@link RegisterHandler} class.
  *
- * @Author Kevin Holswilder
- * @Date 28/10/2025
+ * <p>
+ *     This class tests the functionality of the {@link RegisterHandler} class.
+ * </p>
+ *
+ * @author Kevin Holswilder
+ * @Date 2025/10/28
  */
 
 public class RegisterTest {
 
+    /**
+     * <p>
+     *     Tests the functionality of the {@link RegisterHandler#getAuthorRegister()} instance,
+     *     by adding an author to the register and verifying that the author is added correctly.
+     * </p>
+     */
     @Test
     public void addAuthorsToRegister() {
         Author author = new Author("kevinholswilder", "Kevin", "Holswilder");
-        RegisterHandler.getAuthorDatabase().addAuthor(author);
+        RegisterHandler.getAuthorRegister().addAuthor(author);
 
-        List<Author> authors = RegisterHandler.getAuthorDatabase().getAuthors();
+        List<Author> authors = RegisterHandler.getAuthorRegister().getAuthors();
 
         // Positive tests
         Assert.assertEquals(1, authors.size());
@@ -33,26 +43,36 @@ public class RegisterTest {
         Assert.assertFalse(authors.stream().anyMatch(a -> a.getUsername().equals("username")));
     }
 
+    /**
+     * <p>
+     *     Tests the functionality of the {@link RegisterHandler#getDiaryRegister()} instance,
+     *     by creating a test {@link Author} and adding two separate {@link DiaryEntry} objects
+     *     to the register and verifying that the objects are added correctly.
+     * </p>
+     */
     @Test
     public void addDiaryEntryToRegister() {
         Author testAuthor = new Author("username", "John", "Doe");
 
         DiaryEntry diaryEntry = new DiaryEntry("Taco", "1x Minced meat, 1x Cheese, 1x Sauce", testAuthor);
-        RegisterHandler.getDiaryDatabase().addDiaryEntry(diaryEntry);
+        RegisterHandler.getDiaryRegister().addDiaryEntry(diaryEntry);
 
         DiaryEntry diaryEntry1 = new DiaryEntry("Sushi", "1x Salmon, 1x Vinegar, 1x Rice, 1x Soy sauce", testAuthor);
-        RegisterHandler.getDiaryDatabase().addDiaryEntry(diaryEntry1);
+        RegisterHandler.getDiaryRegister().addDiaryEntry(diaryEntry1);
 
-        List<DiaryEntry> diaries = RegisterHandler.getDiaryDatabase().getDiaryEntries();
+        List<DiaryEntry> diaries = RegisterHandler.getDiaryRegister().getDiaryEntries();
 
         // Positive tests
         Assert.assertEquals(2, diaries.size()); // Expected 2
-        Assert.assertEquals("Taco", RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitleAndAuthor("Taco", testAuthor).getTitle());
+        Assert.assertEquals("Taco", RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor("Taco", testAuthor).getTitle());
 
         // Negative tests
-        Assert.assertNotNull(RegisterHandler.getDiaryDatabase().getDiaryEntriesByTitleAndAuthor("Sushi", testAuthor));
+        Assert.assertNotNull(RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor("Sushi", testAuthor));
     }
 
+    /**
+     * Start the register test.
+     */
     public void startRegisterTest() {
         this.addAuthorsToRegister();
         this.addDiaryEntryToRegister();

@@ -1,16 +1,16 @@
 package main.java.edu.ntnu.iir.bidata.flow;
 
 /**
- * MenuDisplay class that displays all menu options.
+ * Provides helper methods for displaying the main menu and submenus.
  *
  * @Author Kevin Holswilder
- * @Date 11/01/2025
+ * @Date 2025/11/01
  */
 
 public class MenuDisplay {
 
     /**
-     * Displays the main menu.
+     * Displays the main menu, used in the start flow.
      */
     public static void mainMenu() {
         System.out.println("--=[ Cooking Diary ]=--");
@@ -21,7 +21,7 @@ public class MenuDisplay {
     }
 
     /**
-     * Displays the cooking diary menu.
+     * Displays the cooking diary menu, used in the diary flow.
      */
     public static void diaryMenu() {
         System.out.println("--=[ Cooking Diary ]=--");
@@ -34,7 +34,7 @@ public class MenuDisplay {
     }
 
     /**
-     * Displays the search menu.
+     * Displays the search menu, used in the search flow.
      */
     public static void searchDiaryMenu() {
         System.out.println("--=[ Cooking Diary ]=--");

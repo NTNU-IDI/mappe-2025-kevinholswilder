@@ -6,10 +6,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 /**
- * Console UI
+ * This class provides a simple UI for interacting with the program.
  *
  * @Author Kevin Holswilder
- * @Date 12/10/2025
+ * @Date  2025/10/12
  */
 
 public class ConsoleUI {
@@ -17,16 +17,17 @@ public class ConsoleUI {
     private Scanner scanner;
 
     /**
-     * Initializes the console UI.
-     * @throws IllegalStateException if the scanner cannot be initialized.
+     * <p>Initializes the console UI by creating a UTF-8 scanner for reading input.</p>>
+     *
+     * <p>This method is furthermore automatically called by {@link #start()} if the scanner is null.</p>
      */
     public void init() {
-        scanner = new Scanner(System.in, StandardCharsets.UTF_8);
-        System.out.println("Initializing...");
+        this.scanner = new Scanner(System.in, StandardCharsets.UTF_8);
+        System.out.println("Initializing program...");
     }
 
     /**
-     * Starts the console UI.
+     * Starts the program and begins the flow of the program.
      */
     public void start() {
         if (this.scanner == null) {

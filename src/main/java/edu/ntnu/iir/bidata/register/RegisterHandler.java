@@ -1,28 +1,29 @@
 package main.java.edu.ntnu.iir.bidata.register;
 
 /**
- *
- * DatabaseHandler class that handles every database interaction.
+ * RegisterHandler class that provides access to the local register instances.
  *
  * @Author Kevin Holswilder
- * @Date 16.10.2025
+ * @Date 2025/10/16
  */
 
 public class RegisterHandler {
 
     /**
-     * Returns the diary database instance.
-     * @return DiaryDatabase
+     * Provides access to the diary register instance.
+     *
+     * @return the {@link DiaryRegister} instance.
      */
-    public static DiaryRegister getDiaryDatabase() {
+    public static DiaryRegister getDiaryRegister() {
         return DiaryRegister.getInstance();
     }
 
     /**
-     * Returns the author database instance.
-     * @return AuthorDatabase
+     * Provides access to the author register instance.
+     *
+     * @return the {@link AuthorRegister} instance.
      */
-    public static AuthorRegister getAuthorDatabase() {
+    public static AuthorRegister getAuthorRegister() {
         return AuthorRegister.getInstance();
     }
 

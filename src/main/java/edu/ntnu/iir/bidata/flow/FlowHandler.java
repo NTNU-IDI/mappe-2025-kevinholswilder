@@ -1,31 +1,45 @@
 package main.java.edu.ntnu.iir.bidata.flow;
 
 import main.java.edu.ntnu.iir.bidata.diary.DiaryHandler;
+import main.java.edu.ntnu.iir.bidata.models.Author;
+import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.user.UserHandler;
 
 import java.util.Scanner;
 
 /**
- * FlowHandler class that handles the main flow of the program.
+ * <p>Provides methods for the flow of the program.</p>>
+ *
+ * <p>This class is responsible for handling the user input and redirecting the user to the correct action.</p>
  *
  * @Author Kevin Holswilder
- * @Date 01/11/2025
+ * @Date 2025/11/01
  */
 
 public class FlowHandler {
 
+    /**
+     * Private constructor to prevent instantiation.
+     */
     private FlowHandler() {}
 
     /**
-     * Starts the main flow of the program.
-     * @param input Scanner object.
+     * Runs the main flow of the program.
+     *
+     * <p>This method is responsible for processing the user input and performing the following actions:</p>
+     * <ul>
+     *     <li>Logging in</li>
+     *     <li>Registering a new {@link Author}</li>
+     *     <li>Exiting the program</li>
+     * </ul>
+     *
+     * @param input a {@link Scanner} object to read user input.
      */
     public static void startFlow(Scanner input) {
         int option = -1;
         while (option != 3) {
             MenuDisplay.mainMenu();
 
-            // TODO - Check if default case is better than handling it with a try-catch block.
             try {
                 option = Integer.parseInt(input.nextLine());
             } catch (Exception e) {
@@ -48,8 +62,19 @@ public class FlowHandler {
     }
 
     /**
-     * Handles the diary flow of the program.
-     * @param input Scanner object.
+     * Runs the diary flow of the program.
+     *
+     * <p>This method is responsible for processing the user input and performing the following actions:</p>
+     * <ul>
+     *     <li>Write a new {@link DiaryEntry}.</li>
+     *     <li>Delete an existing {@link DiaryEntry}.</li>
+     *     <li>Runs the search flow of the program.</li>
+     *     <li>List all {@link DiaryEntry} objects in the register.</li>
+     *     <li>List all {@link Author} objects and the amount of {@link DiaryEntry} objects they have written.</li>
+     *     <li>Log out and return to the main flow of the program.</li>
+     * </ul>
+     *
+     * @param input a {@link Scanner} object to read user input.
      */
     public static void diaryFlow(Scanner input) {
         int option = -1;
@@ -75,8 +100,19 @@ public class FlowHandler {
     }
 
     /**
-     * Handles the search flow of the program.
-     * @param input Scanner object.
+     * Runs the search flow of the program.
+     *
+     * <p>This method is responsible for processing the user input and performing the following actions:</p>
+     * <ul>
+     *     <li>List all {@link DiaryEntry} where the title matches the query.</li>
+     *     <li>List all {@link DiaryEntry} where the date matches the query.</li>
+     *     <li>List all {@link DiaryEntry} between a period of dates.</li>
+     *     <li>List all {@link DiaryEntry} where the {@link Author} matches the username.</li>
+     *     <li>List all {@link DiaryEntry} where the content contains the query.</li>
+     *     <li>List all {@link DiaryEntry} whose labels contain the query.</li>
+     * </ul>
+     *
+     * @param input a {@link Scanner} object to read user input.
      */
     public static void searchDiaryFlow(Scanner input) {
         int option = -1;
