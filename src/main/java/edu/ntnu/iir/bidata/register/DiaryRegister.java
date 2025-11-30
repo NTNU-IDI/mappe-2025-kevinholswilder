@@ -94,7 +94,7 @@ public class DiaryRegister {
      */
     public List<DiaryEntry> getDiaryEntriesByPeriod(LocalDate start, LocalDate end) {
         return this.getDiaryEntryStream()
-                .filter(it -> it.getDate().isAfter(start) && it.getDate().isBefore(end))
+                .filter(it -> !it.getDate().isBefore(start) && !it.getDate().isAfter(end))
                 .toList();
     }
 
