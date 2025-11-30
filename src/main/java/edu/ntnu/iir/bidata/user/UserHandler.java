@@ -65,8 +65,8 @@ public class UserHandler {
         String username = UtilityManager.ensureOnlyAlphabeticLetters(input);
 
         // Check if the username already exists.
-        Author author = RegisterHandler.getAuthorRegister().getAuthorByUsername(username);
-        if (author != null) {
+        Author potentialAuthor = RegisterHandler.getAuthorRegister().getAuthorByUsername(username);
+        if (potentialAuthor != null) {
             System.out.println("Username already exists, you're being sent back to the main menu.");
             return;
         }
@@ -78,10 +78,10 @@ public class UserHandler {
         String surname = UtilityManager.ensureNonEmptyTrimmedString(input);
 
         // Register the new author.
-        Author newAuthor = new Author(username, name, surname);
-        RegisterHandler.getAuthorRegister().addAuthor(newAuthor);
+        Author author = new Author(username, name, surname);
+        RegisterHandler.getAuthorRegister().addAuthor(author);
 
-        System.out.println("Thank you for registering, " + newAuthor.getName() + "!");
+        System.out.println("Thank you for registering, " + author.getName() + "!");
     }
 
     /**
