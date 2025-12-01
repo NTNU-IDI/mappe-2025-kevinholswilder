@@ -1,9 +1,10 @@
 package main.java.edu.ntnu.iir.bidata.flow;
 
-import main.java.edu.ntnu.iir.bidata.diary.DiaryHandler;
+import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.ui.InteractionKeys;
+import main.java.edu.ntnu.iir.bidata.ui.diary.*;
 import main.java.edu.ntnu.iir.bidata.user.UserHandler;
 
 import java.util.Scanner;
@@ -18,6 +19,15 @@ import java.util.Scanner;
  */
 
 public class FlowHandler {
+
+    /**
+     * UI objects for the diary flow.
+     */
+    private static final DiaryCreateUI diaryCreateUI = new DiaryCreateUI();
+    private static final DiaryDeleteUI diaryDeleteUI = new DiaryDeleteUI();
+    private static final DiaryEditUI diaryEditUI = new DiaryEditUI();
+    private static final DiaryExportUI diaryExportUI = new DiaryExportUI();
+    private static final DiarySearchUI diarySearchUI = new DiarySearchUI();
 
     /**
      * Private constructor to prevent instantiation.
@@ -90,12 +100,6 @@ public class FlowHandler {
             }
 
             switch (option) {
-                case 1 -> DiaryHandler.writeDiary(input);
-                case 2 -> DiaryHandler.deleteDiary(input);
-                case 3 -> FlowHandler.searchDiaryFlow(input);
-                case 4 -> DiaryHandler.exportDiaries();
-                case 5 -> DiaryHandler.exportAuthorStatistics();
-                case 6 -> UserHandler.logout();
                 case InteractionKeys.WRITE_DIARY -> diaryCreateUI.writeDiary(input);
                 case InteractionKeys.DELETE_DIARY -> diaryDeleteUI.deleteDiary(input);
                 case InteractionKeys.RUN_EDIT_FLOW -> editDiaryFlow(input);
@@ -103,6 +107,38 @@ public class FlowHandler {
                 case InteractionKeys.EXPORT_DIARIES -> diaryExportUI.exportDiaries();
                 case InteractionKeys.EXPORT_AUTHOR_STATISTICS -> diaryExportUI.exportAuthorStatistics();
                 case InteractionKeys.LOGOUT -> UserHandler.logout();
+            }
+        }
+    }
+
+    /**
+     * Runs the edit flow of the program.
+     *
+     * <p>This method is responsible for processing the user input and performing the following actions:</p>
+     * <ul>
+     *     <li>Add a new {@link RecipeLabel} to an existing {@link DiaryEntry}.</li>
+     *     <li>Remove an existing {@link RecipeLabel} from a {@link DiaryEntry}.</li>
+     *     <li>Edit individual lines of a {@link DiaryEntry} its content.</li>
+     *     <li>Return to the main flow of the program.</li>
+     * </ul>
+     */
+    private static void editDiaryFlow(Scanner input) {
+        int option = InteractionKeys.INITIAL_VALUE;
+        while (option != InteractionKeys.EDIT_RETURN) {
+            MenuDisplay.editDiaryMenu();
+
+            try {
+                option = Integer.parseInt(input.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid option, please try again.");
+                continue;
+            }
+
+            switch (option) {
+                case InteractionKeys.EDIT_ADD_LABEL -> diaryEditUI.addLabelToDiary(input);
+                case InteractionKeys.EDIT_REMOVE_LABEL -> diaryEditUI.removeLabelFromDiary(input);
+                case InteractionKeys.EDIT_CONTENT_LINE -> diaryEditUI.editContentLine(input);
+                case InteractionKeys.EDIT_RETURN -> System.out.println("Returning to diary menu...");
             }
         }
     }

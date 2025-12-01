@@ -28,7 +28,7 @@ import java.util.UUID;
 public class DiaryEntry {
 
     private final String title;
-    private final String content;
+    private String content;
     private final Author author;
     private final LocalDate date;
     private final UUID diaryEntryId;
@@ -73,6 +73,18 @@ public class DiaryEntry {
     }
 
     /**
+     * Replaces the line of a diary entry's content with new content.
+     *
+     * @param lineNumber the line number of the content to be replaced.
+     * @param newContent the new content to replace the old content.
+     */
+    public void setContentLine(int lineNumber, String newContent) {
+        String[] contentLines = this.content.split("\n");
+        contentLines[lineNumber - 1] = newContent;
+        this.content = String.join("\n", contentLines);
+    }
+
+    /**
      * @return the date of a diary entry.
      */
     public LocalDate getDate() {
@@ -98,6 +110,13 @@ public class DiaryEntry {
      */
     public void addRecipeLabel(RecipeLabel recipeLabel) {
         this.recipeLabels.add(recipeLabel);
+    }
+
+    /**
+     * @param recipeLabel to remove from the recipe labels.
+     */
+    public void removeRecipeLabel(RecipeLabel recipeLabel) {
+        this.recipeLabels.remove(recipeLabel);
     }
 
     /**

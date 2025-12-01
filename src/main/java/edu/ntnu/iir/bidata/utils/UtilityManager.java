@@ -30,6 +30,21 @@ public class UtilityManager {
     }
 
     /**
+     * @param input a {@link Scanner} object to read user input.
+     * @return a validated integer.
+     */
+    public static int ensureValidInteger(Scanner input) {
+        while (true) {
+            String string = input.nextLine();
+            try {
+                return Integer.parseInt(string);
+            } catch (Exception e) {
+                System.out.println("Please make sure that the value you entered is a valid integer.");
+            }
+        }
+    }
+
+    /**
      * Prompts the user to enter a date in the format YYYY-MM-DD.
      *
      * @param input a {@link Scanner} object to read user input.
