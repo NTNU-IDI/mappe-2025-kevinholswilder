@@ -1,7 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.models;
 
 import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
-import main.java.edu.ntnu.iir.bidata.user.UserHandler;
+import main.java.edu.ntnu.iir.bidata.service.UserService;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.time.LocalDate;
@@ -24,7 +24,7 @@ import java.util.UUID;
  *
  * @author Kevin Holswilder
  * @since 2025/10/12
- * @see UserHandler#getCurrentUser() to see how the author is obtained.
+ * @see UserService#getCurrentUser() to see how the author is obtained.
  */
 
 public class DiaryEntry {

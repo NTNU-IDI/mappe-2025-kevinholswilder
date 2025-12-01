@@ -4,7 +4,7 @@ import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
 import main.java.edu.ntnu.iir.bidata.service.DiaryService;
-import main.java.edu.ntnu.iir.bidata.user.UserHandler;
+import main.java.edu.ntnu.iir.bidata.service.UserService;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.util.EnumSet;
@@ -40,7 +40,7 @@ public class DiaryEditUI {
      */
     public void addLabelToDiary(Scanner input) {
         // Check if the user has any written diaries.
-        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByAuthor(UserHandler.getCurrentUser());
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByAuthor(UserService.getCurrentUser());
         if (diaryEntries.isEmpty()) {
             System.out.println("You have not written any recipes yet, please write a recipe first before adding a label.");
             return;
@@ -54,7 +54,7 @@ public class DiaryEditUI {
         String title = DiaryHelper.getValidDiaryTitle(input);
 
         // Get the diary entry.
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser());
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser());
 
         // Check if the diary entry already contains all available labels.
         if (diaryEntry.getRecipeLabels().size() == RecipeLabel.values().length) {
@@ -101,7 +101,7 @@ public class DiaryEditUI {
      */
     public void removeLabelFromDiary(Scanner input) {
         // Check if the user has any written diaries.
-        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByAuthor(UserHandler.getCurrentUser());
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByAuthor(UserService.getCurrentUser());
         if (diaryEntries.isEmpty()) {
             System.out.println("You have not written any recipes yet, please write a recipe first before removing a label.");
             return;
@@ -115,7 +115,7 @@ public class DiaryEditUI {
         String title = DiaryHelper.getValidDiaryTitle(input);
 
         // Get the diary entry.
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser());
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser());
 
         // Check if the diary entry has any labels.
         if (diaryEntry.getRecipeLabels().isEmpty()) {
@@ -156,7 +156,7 @@ public class DiaryEditUI {
      */
     public void editContentLine(Scanner input) {
         // Check if the user has any diaries.
-        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByAuthor(UserHandler.getCurrentUser());
+        List<DiaryEntry> diaryEntries = RegisterHandler.getDiaryRegister().getDiaryEntriesByAuthor(UserService.getCurrentUser());
         if (diaryEntries.isEmpty()) {
             System.out.println("You have not written any recipes yet, please write a recipe first before removing a label.");
             return;
@@ -171,7 +171,7 @@ public class DiaryEditUI {
 
         // Get the diary entry.
         System.out.println("Which line of the content would you like to change?");
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser());
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser());
         String[] contentLines = diaryEntry.getContent().split("\n");
         for (int i = 0; i < contentLines.length; i++) {
             System.out.println(i+1 + ". " + contentLines[i]);

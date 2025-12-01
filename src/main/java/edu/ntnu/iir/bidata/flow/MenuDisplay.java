@@ -1,7 +1,7 @@
 package main.java.edu.ntnu.iir.bidata.flow;
 
 import main.java.edu.ntnu.iir.bidata.ui.InteractionKeys;
-import main.java.edu.ntnu.iir.bidata.user.UserHandler;
+import main.java.edu.ntnu.iir.bidata.service.UserService;
 
 /**
  * Provides helper methods for displaying the main menu and submenus.
@@ -66,7 +66,7 @@ public class MenuDisplay {
      * Prints the header of the program.
      */
     private static void printHeader() {
-        String username = UserHandler.getCurrentUser() != null ? UserHandler.getCurrentUser().toString() : "None";
+        String username = UserService.getCurrentUser() != null ? UserService.getCurrentUser().toString() : "None";
         System.out.println(" ");
         System.out.println("=== Cooking Diary (User: " + username + ") ===");
     }

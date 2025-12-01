@@ -2,7 +2,7 @@ package main.java.edu.ntnu.iir.bidata.ui.diary;
 
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
-import main.java.edu.ntnu.iir.bidata.user.UserHandler;
+import main.java.edu.ntnu.iir.bidata.service.UserService;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.util.List;
@@ -73,7 +73,7 @@ public class DiaryHelper {
             System.out.println("Enter the title of your recipe diary:");
             title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
-            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser()) != null;
+            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser()) != null;
             if (titleExists) {
                 break;
             } else {

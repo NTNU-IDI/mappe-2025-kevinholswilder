@@ -6,7 +6,7 @@ import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.register.DiaryRegister;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
 import main.java.edu.ntnu.iir.bidata.service.DiaryService;
-import main.java.edu.ntnu.iir.bidata.user.UserHandler;
+import main.java.edu.ntnu.iir.bidata.service.UserService;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class DiaryCreateUI {
             System.out.println("Enter the title of your recipe diary:");
             title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
-            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserHandler.getCurrentUser()) == null;
+            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser()) == null;
             if (!titleExists) {
                 System.out.println("You already have a recipe with this title, please enter a new title.");
             } else {
@@ -61,7 +61,7 @@ public class DiaryCreateUI {
         }
 
         // Get the current author.
-        Author author = UserHandler.getCurrentUser();
+        Author author = UserService.getCurrentUser();
 
         // Add (optional) labels to the diary entry.
         System.out.println("Enter labels for you recipe, one at a time.\nType 'exit' when you are finished or don't wish to add any labels.");

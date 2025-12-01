@@ -5,7 +5,7 @@ import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
 import main.java.edu.ntnu.iir.bidata.ui.InteractionKeys;
 import main.java.edu.ntnu.iir.bidata.ui.diary.*;
-import main.java.edu.ntnu.iir.bidata.user.UserHandler;
+import main.java.edu.ntnu.iir.bidata.ui.user.UserUI;
 
 import java.util.Scanner;
 
@@ -28,6 +28,7 @@ public class FlowHandler {
     private static final DiaryEditUI diaryEditUI = new DiaryEditUI();
     private static final DiaryExportUI diaryExportUI = new DiaryExportUI();
     private static final DiarySearchUI diarySearchUI = new DiarySearchUI();
+    private static final UserUI userUI = new UserUI();
 
     /**
      * Private constructor to prevent instantiation.
@@ -60,12 +61,12 @@ public class FlowHandler {
 
             switch (option) {
                 case InteractionKeys.LOGIN -> {
-                    boolean isLoggedIn = UserHandler.login(input);
+                    boolean isLoggedIn = userUI.promptLogin(input);
                     if (isLoggedIn) {
                         diaryFlow(input);
                     }
                 }
-                case InteractionKeys.REGISTER -> UserHandler.register(input);
+                case InteractionKeys.REGISTER -> userUI.promptRegister(input);
                 case InteractionKeys.EXIT_PROGRAM -> System.out.println("Exiting program..");
             }
 
@@ -106,7 +107,7 @@ public class FlowHandler {
                 case InteractionKeys.RUN_SEARCH_FLOW -> searchDiaryFlow(input);
                 case InteractionKeys.EXPORT_DIARIES -> diaryExportUI.exportDiaries();
                 case InteractionKeys.EXPORT_AUTHOR_STATISTICS -> diaryExportUI.exportAuthorStatistics();
-                case InteractionKeys.LOGOUT -> UserHandler.logout();
+                case InteractionKeys.LOGOUT -> userUI.logout();
             }
         }
     }
