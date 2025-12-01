@@ -48,7 +48,7 @@ public enum RecipeLabel {
     }
 
     /**
-     * Returns the label in a formatted way.
+     * Returns the label in a capitalized format, e.g. "Vegan".
      *
      * @return the formatted label.
      */

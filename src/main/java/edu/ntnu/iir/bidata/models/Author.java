@@ -5,8 +5,10 @@ import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 import java.util.UUID;
 
 /**
- * <p>Represents an author with a username, name and surname.
- * Additionally, this class provides getter methods to access the author's attributes.</p>
+ * <p>
+ *     Represents an author with a username, name and surname.
+ *     Additionally, this class provides getter methods to access the author's attributes.
+ * </p>
  *
  * Example usage:
  * <pre>

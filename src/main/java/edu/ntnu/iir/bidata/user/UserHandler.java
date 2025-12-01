@@ -104,4 +104,5 @@ public class UserHandler {
     public static void logout() {
         currentUser = null;
     }
+
 }

@@ -11,8 +11,10 @@ import java.util.HashSet;
 import java.util.UUID;
 
 /**
- * <p>Represents a diary entry with a unique id, title, content, author, date and labels.
- * Additionally, this class provides both getter and helper methods to access the diary entry's attributes.</p>
+ * <p>
+ *     Represents a diary entry with a unique id, title, content, author, date and labels.
+ *     Additionally, this class provides both getter and helper methods to access the diary entry's attributes.
+ * </p>
  *
  * Example usage:
  * <pre>

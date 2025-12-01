@@ -8,8 +8,10 @@ import java.util.List;
 /**
  * Represents the {@link Author} register.
  *
- * <p>This class is a singleton class that ensures there only exists 1 instance of
- * the local register at a time to ensure a single source of truth throughout the runtime of the program.</p>
+ * <p>
+ *     This class is a singleton class that ensures there only exists 1 instance of
+ *     the local register at a time to ensure a single source of truth throughout the runtime of the program.
+ * </p>
  *
  * @author Kevin Holswilder
  * @since 2025/10/21

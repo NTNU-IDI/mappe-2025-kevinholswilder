@@ -79,7 +79,7 @@ public class FlowHandler {
      * <ul>
      *     <li>Write a new {@link DiaryEntry}.</li>
      *     <li>Delete an existing {@link DiaryEntry}.</li>
-     *     <li>Runs the search flow of the program.</li>
+     *     <li>Run the search flow of the program.</li>
      *     <li>List all {@link DiaryEntry} objects in the register.</li>
      *     <li>List all {@link Author} objects and the amount of {@link DiaryEntry} objects they have written.</li>
      *     <li>Log out and return to the main flow of the program.</li>
@@ -154,6 +154,7 @@ public class FlowHandler {
      *     <li>List all {@link DiaryEntry} where the {@link Author} matches the username.</li>
      *     <li>List all {@link DiaryEntry} where the content contains the query.</li>
      *     <li>List all {@link DiaryEntry} whose labels contain the query.</li>
+     *     <li>Return to the main flow of the program.</li>
      * </ul>
      *
      * @param input a {@link Scanner} object to read user input.
