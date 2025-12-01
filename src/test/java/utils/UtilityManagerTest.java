@@ -13,7 +13,7 @@ import org.junit.Test;
  * <i>Note: Not all functionalities are being tested.</i>
  *
  * @author Kevin Holswilder
- * @Date 2025/10/28
+ * @since 2025/10/28
  */
 
 public class UtilityManagerTest {

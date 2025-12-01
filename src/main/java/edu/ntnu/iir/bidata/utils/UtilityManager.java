@@ -8,8 +8,8 @@ import java.util.Scanner;
 /**
  * This class provides static utility methods for validating user input.
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/25
+ * @author Kevin Holswilder
+ * @since 2025/10/25
  */
 
 public class UtilityManager {

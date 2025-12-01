@@ -14,8 +14,8 @@ import java.util.stream.Stream;
  * <p>This class is a singleton class that ensures there only exists 1 instance of
  * the local register at a time to ensure a single source of truth throughout the runtime of the program.</p>
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/16
+ * @author Kevin Holswilder
+ * @since 2025/10/16
  * @see <a href="https://www.geeksforgeeks.org/java/singleton-class-java/">Singleton Method Design Pattern in Java</a>
  */
 

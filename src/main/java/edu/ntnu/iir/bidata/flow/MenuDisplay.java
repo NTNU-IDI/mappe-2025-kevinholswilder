@@ -3,8 +3,8 @@ package main.java.edu.ntnu.iir.bidata.flow;
 /**
  * Provides helper methods for displaying the main menu and submenus.
  *
- * @Author Kevin Holswilder
- * @Date 2025/11/01
+ * @author Kevin Holswilder
+ * @since 2025/11/01
  */
 
 public class MenuDisplay {

@@ -25,8 +25,8 @@ import test.java.utils.UtilityManagerTest;
  *     <li>UtilityManger Test ({@link UtilityManager})</li>
  * </ul>
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/27
+ * @author Kevin Holswilder
+ * @since 2025/10/27
  */
 
 public class MainTest {

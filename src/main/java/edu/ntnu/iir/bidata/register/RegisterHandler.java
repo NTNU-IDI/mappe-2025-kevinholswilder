@@ -3,8 +3,8 @@ package main.java.edu.ntnu.iir.bidata.register;
 /**
  * RegisterHandler class that provides access to the local register instances.
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/16
+ * @author Kevin Holswilder
+ * @since 2025/10/16
  */
 
 public class RegisterHandler {

@@ -10,8 +10,8 @@ import main.java.edu.ntnu.iir.bidata.ui.ConsoleUI;
  *     and starts the program.
  * </p>
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/12
+ * @author Kevin Holswilder
+ * @since 2025/10/12
  */
 
 public class Main {

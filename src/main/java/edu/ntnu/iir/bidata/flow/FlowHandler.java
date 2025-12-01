@@ -12,8 +12,8 @@ import java.util.Scanner;
  *
  * <p>This class is responsible for handling the user input and redirecting the user to the correct action.</p>
  *
- * @Author Kevin Holswilder
- * @Date 2025/11/01
+ * @author Kevin Holswilder
+ * @since 2025/11/01
  */
 
 public class FlowHandler {

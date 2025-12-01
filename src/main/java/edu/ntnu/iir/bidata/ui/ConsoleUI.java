@@ -8,8 +8,8 @@ import java.util.Scanner;
 /**
  * This class provides a simple UI for interacting with the program.
  *
- * @Author Kevin Holswilder
- * @Date  2025/10/12
+ * @author Kevin Holswilder
+ * @since  2025/10/12
  */
 
 public class ConsoleUI {

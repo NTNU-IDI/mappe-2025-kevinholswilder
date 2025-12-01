@@ -16,7 +16,7 @@ import java.util.Scanner;
  * </p>
  *
  * @author Kevin Holswilder
- * @Date 2025/11/01
+ * @since 2025/11/01
  */
 
 public class ConsoleUITest {

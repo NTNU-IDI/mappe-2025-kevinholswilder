@@ -8,8 +8,8 @@ import java.util.Collection;
 /**
  * This class contains all the possible labels for the labels of a {@link DiaryEntry}.
  *
- * @Author Kevin Holswilder
- * @Date 2025/11/25
+ * @author Kevin Holswilder
+ * @since 2025/11/25
  */
 
 public enum RecipeLabel {

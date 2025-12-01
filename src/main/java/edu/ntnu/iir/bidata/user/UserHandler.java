@@ -14,8 +14,8 @@ import java.util.Scanner;
  *     Additionally, it provides helper methods to set and get the current user.
  * </p>
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/25
+ * @author Kevin Holswilder
+ * @since 2025/10/25
  */
 
 public class UserHandler {

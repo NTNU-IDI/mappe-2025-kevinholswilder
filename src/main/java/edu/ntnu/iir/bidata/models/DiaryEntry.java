@@ -20,8 +20,8 @@ import java.util.UUID;
  *     System.out.println(diaryEntry.getTitle()); // Chicken Curry
  * </pre>
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/12
+ * @author Kevin Holswilder
+ * @since 2025/10/12
  * @see UserHandler#getCurrentUser() to see how the author is obtained.
  */
 

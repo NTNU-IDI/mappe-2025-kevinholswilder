@@ -14,8 +14,8 @@ import java.util.UUID;
  *     System.out.println(author.getName()); // John Doe
  * </pre>
  *
- * @Author Kevin Holswilder
- * @Date 2025/10/12
+ * @author Kevin Holswilder
+ * @since 2025/10/12
  */
 
 public class Author {
