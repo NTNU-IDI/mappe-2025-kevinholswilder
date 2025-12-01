@@ -3,6 +3,7 @@ package main.java.edu.ntnu.iir.bidata.flow;
 import main.java.edu.ntnu.iir.bidata.diary.DiaryHandler;
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
+import main.java.edu.ntnu.iir.bidata.ui.InteractionKeys;
 import main.java.edu.ntnu.iir.bidata.user.UserHandler;
 
 import java.util.Scanner;
@@ -36,8 +37,8 @@ public class FlowHandler {
      * @param input a {@link Scanner} object to read user input.
      */
     public static void startFlow(Scanner input) {
-        int option = -1;
-        while (option != 3) {
+        int option = InteractionKeys.INITIAL_VALUE;
+        while (option != InteractionKeys.EXIT_PROGRAM) {
             MenuDisplay.mainMenu();
 
             try {
@@ -48,14 +49,14 @@ public class FlowHandler {
             }
 
             switch (option) {
-                case 1 -> {
+                case InteractionKeys.LOGIN -> {
                     boolean isLoggedIn = UserHandler.login(input);
                     if (isLoggedIn) {
-                        FlowHandler.diaryFlow(input);
+                        diaryFlow(input);
                     }
                 }
-                case 2 -> UserHandler.register(input);
-                case 3 -> System.out.println("Exiting program..");
+                case InteractionKeys.REGISTER -> UserHandler.register(input);
+                case InteractionKeys.EXIT_PROGRAM -> System.out.println("Exiting program..");
             }
 
         }
@@ -76,9 +77,9 @@ public class FlowHandler {
      *
      * @param input a {@link Scanner} object to read user input.
      */
-    public static void diaryFlow(Scanner input) {
-        int option = -1;
-        while (option != 6) {
+    private static void diaryFlow(Scanner input) {
+        int option = InteractionKeys.INITIAL_VALUE;
+        while (option != InteractionKeys.LOGOUT) {
             MenuDisplay.diaryMenu();
 
             try {
@@ -95,6 +96,13 @@ public class FlowHandler {
                 case 4 -> DiaryHandler.exportDiaries();
                 case 5 -> DiaryHandler.exportAuthorStatistics();
                 case 6 -> UserHandler.logout();
+                case InteractionKeys.WRITE_DIARY -> diaryCreateUI.writeDiary(input);
+                case InteractionKeys.DELETE_DIARY -> diaryDeleteUI.deleteDiary(input);
+                case InteractionKeys.RUN_EDIT_FLOW -> editDiaryFlow(input);
+                case InteractionKeys.RUN_SEARCH_FLOW -> searchDiaryFlow(input);
+                case InteractionKeys.EXPORT_DIARIES -> diaryExportUI.exportDiaries();
+                case InteractionKeys.EXPORT_AUTHOR_STATISTICS -> diaryExportUI.exportAuthorStatistics();
+                case InteractionKeys.LOGOUT -> UserHandler.logout();
             }
         }
     }
@@ -114,9 +122,9 @@ public class FlowHandler {
      *
      * @param input a {@link Scanner} object to read user input.
      */
-    public static void searchDiaryFlow(Scanner input) {
-        int option = -1;
-        while (option != 7) {
+    private static void searchDiaryFlow(Scanner input) {
+        int option = InteractionKeys.INITIAL_VALUE;
+        while (option != InteractionKeys.SEARCH_RETURN) {
             MenuDisplay.searchDiaryMenu();
 
             try {
@@ -127,13 +135,13 @@ public class FlowHandler {
             }
 
             switch (option) {
-                case 1 -> DiaryHandler.searchDiaryByTitle(input);
-                case 2 -> DiaryHandler.searchDiaryByDate(input);
-                case 3 -> DiaryHandler.searchDiaryByPeriod(input);
-                case 4 -> DiaryHandler.searchDiaryByAuthor(input);
-                case 5 -> DiaryHandler.searchDiaryByPrompt(input);
-                case 6 -> DiaryHandler.searchDiaryByLabel(input);
-                case 7 -> System.out.println("Returning to diary menu...");
+                case InteractionKeys.SEARCH_TITLE -> diarySearchUI.searchDiaryByTitle(input);
+                case InteractionKeys.SEARCH_DATE -> diarySearchUI.searchDiaryByDate(input);
+                case InteractionKeys.SEARCH_PERIOD -> diarySearchUI.searchDiaryBetweenPeriod(input);
+                case InteractionKeys.SEARCH_AUTHOR -> diarySearchUI.searchDiaryByAuthor(input);
+                case InteractionKeys.SEARCH_PROMPT -> diarySearchUI.searchDiaryByPrompt(input);
+                case InteractionKeys.SEARCH_LABEL -> diarySearchUI.searchDiaryByLabel(input);
+                case InteractionKeys.SEARCH_RETURN -> System.out.println("Returning to diary menu...");
             }
         }
     }
