@@ -66,6 +66,7 @@ public class Author {
      */
     @Override
     public String toString() {
-        return UtilityManager.capitalize(this.getName()) + " " + UtilityManager.capitalize(this.getSurname());
+        return UtilityManager.capitalize(this.name) + " " + UtilityManager.capitalize(this.surname);
     }
+
 }
