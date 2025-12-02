@@ -42,7 +42,7 @@ public class DiaryCreateUI {
             System.out.println("Enter the title of your recipe diary:");
             title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
-            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser()) == null;
+            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor(title, UserService.getCurrentUser()) == null;
             if (!titleExists) {
                 System.out.println("You already have a recipe with this title, please enter a new title.");
             } else {

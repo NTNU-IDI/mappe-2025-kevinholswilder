@@ -73,7 +73,7 @@ public class DiaryHelper {
             System.out.println("Enter the title of your recipe diary:");
             title = UtilityManager.ensureNonEmptyTrimmedString(input);
 
-            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser()) != null;
+            boolean titleExists = RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor(title, UserService.getCurrentUser()) != null;
             if (titleExists) {
                 break;
             } else {

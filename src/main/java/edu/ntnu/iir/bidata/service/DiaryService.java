@@ -74,7 +74,7 @@ public class DiaryService {
      * @return True if the diary entry was deleted, false otherwise.
      */
     public boolean deleteDiaryEntry(String title, Author author) {
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, author);
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor(title, author);
         if (diaryEntry != null) {
             RegisterHandler.getDiaryRegister().removeDiaryEntry(diaryEntry.getId());
             return true;

@@ -64,10 +64,10 @@ public class RegisterTest {
 
         // Positive tests
         Assert.assertEquals(2, diaries.size()); // Expected 2
-        Assert.assertEquals("Taco", RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor("Taco", testAuthor).getTitle());
+        Assert.assertEquals("Taco", RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor("Taco", testAuthor).getTitle());
 
         // Negative tests
-        Assert.assertNotNull(RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor("Sushi", testAuthor));
+        Assert.assertNotNull(RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor("Sushi", testAuthor));
     }
 
     /**

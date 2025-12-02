@@ -72,7 +72,7 @@ public class DiaryRegister {
      * @param author takes in a {@link Author}.
      * @return a {@link DiaryEntry} where the title and {@link Author} matches the given string, returns null if no entry is found.
      */
-    public DiaryEntry getDiaryEntriesByTitleAndAuthor(String title, Author author) {
+    public DiaryEntry getDiaryEntryByTitleAndAuthor(String title, Author author) {
         return this.getDiaryEntryStream()
                 .filter(it -> it.getTitle().equalsIgnoreCase(title) && it.getAuthor().getUsername().equalsIgnoreCase(author.getUsername()))
                 .findFirst()

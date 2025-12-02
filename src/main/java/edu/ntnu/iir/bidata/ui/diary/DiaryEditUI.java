@@ -54,7 +54,7 @@ public class DiaryEditUI {
         String title = DiaryHelper.getValidDiaryTitle(input);
 
         // Get the diary entry.
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser());
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor(title, UserService.getCurrentUser());
 
         // Check if the diary entry already contains all available labels.
         if (diaryEntry.getRecipeLabels().size() == RecipeLabel.values().length) {
@@ -115,7 +115,7 @@ public class DiaryEditUI {
         String title = DiaryHelper.getValidDiaryTitle(input);
 
         // Get the diary entry.
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser());
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor(title, UserService.getCurrentUser());
 
         // Check if the diary entry has any labels.
         if (diaryEntry.getRecipeLabels().isEmpty()) {
@@ -171,7 +171,7 @@ public class DiaryEditUI {
 
         // Get the diary entry.
         System.out.println("Which line of the content would you like to change?");
-        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntriesByTitleAndAuthor(title, UserService.getCurrentUser());
+        DiaryEntry diaryEntry = RegisterHandler.getDiaryRegister().getDiaryEntryByTitleAndAuthor(title, UserService.getCurrentUser());
         String[] contentLines = diaryEntry.getContent().split("\n");
         for (int i = 0; i < contentLines.length; i++) {
             System.out.println(i+1 + ". " + contentLines[i]);
