@@ -10,6 +10,11 @@ package main.java.edu.ntnu.iir.bidata.register;
 public class RegisterHandler {
 
     /**
+     * Private constructor to prevent instantiation.
+     */
+    private RegisterHandler() {}
+
+    /**
      * Provides access to the diary register instance.
      *
      * @return the {@link DiaryRegister} instance.
