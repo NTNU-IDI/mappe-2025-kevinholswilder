@@ -49,6 +49,17 @@ public class AuthorRegister {
     }
 
     /**
+     * @param fullName takes in a string consisting of the author's full name.
+     * @return a {@link Author} where the full name matches the query, if no match is found, returns null.
+     */
+    public Author getAuthorByFullName(String fullName) {
+        return this.getAuthors().stream()
+                .filter(it -> it.toString().equalsIgnoreCase(fullName))
+                .findFirst()
+                .orElse(null);
+    }
+
+    /**
      * @param author adds an {@link Author} to the register.
      */
     public void addAuthor(Author author) {

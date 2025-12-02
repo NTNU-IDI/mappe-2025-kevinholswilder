@@ -86,16 +86,16 @@ public class DiarySearchUI {
      * @param input a {@link Scanner} object to read user input.
      */
     public void searchDiaryByAuthor(Scanner input) {
-        System.out.println("What's the username of the author you're trying to search for?");
+        System.out.println("What's the full name of the author you're trying to search for?");
         // List all authors.
         List<Author> authors = RegisterHandler.getAuthorRegister().getAuthors();
         for (int i = 0; i < authors.size(); i++) {
-            System.out.println("#" + (i + 1) + " - " + authors.get(i).getUsername());
+            System.out.println("#" + (i + 1) + " - " + authors.get(i).toString());
         }
 
         // Check if the author exists.
-        String username = UtilityManager.ensureNonEmptyTrimmedString(input);
-        Author author = RegisterHandler.getAuthorRegister().getAuthorByUsername(username);
+        String fullName = UtilityManager.ensureNonEmptyTrimmedString(input);
+        Author author = RegisterHandler.getAuthorRegister().getAuthorByFullName(fullName);
         if (author == null) {
             System.out.println("Author not found, please try again.");
             return;
