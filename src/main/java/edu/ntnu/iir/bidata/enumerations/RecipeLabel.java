@@ -25,7 +25,7 @@ public enum RecipeLabel {
     /**
      * Returns null if the input is not a valid label.
      *
-     * @param input the user input.
+     * @param input represents the label as a string, e.g. "vegan".
      * @return the {@link RecipeLabel} if valid, null otherwise.
      */
     public static RecipeLabel tryParse(String input) {
