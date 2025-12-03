@@ -15,6 +15,8 @@ Keeping track of recipes can become challenging as the collection grows. This pr
 
 Additionally, this program allows users to label recipes with tags (e.g., 'Keto', 'Halal'). This makes it easier for users to filter and find recipes that fit their diet.
 
+*For visual representation of the project, see the [diagrams](https://github.com/NTNU-IDI/mappe-2025-kevinholswilder/tree/main/assets/diagrams).*
+
 ### Key features include:
 * Create, edit, and delete recipe entries
 * Search and filter recipes by the following:
