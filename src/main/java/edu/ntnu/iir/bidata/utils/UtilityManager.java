@@ -15,6 +15,11 @@ import java.util.Scanner;
 public class UtilityManager {
 
     /**
+     * Private constructor to prevent instantiation.
+     */
+    private UtilityManager() {}
+
+    /**
      * @param input a {@link Scanner} object to read user input.
      * @return a non-empty trimmed string.
      */

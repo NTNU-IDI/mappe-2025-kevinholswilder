@@ -13,6 +13,11 @@ import main.java.edu.ntnu.iir.bidata.service.UserService;
 public class MenuDisplay {
 
     /**
+     * Private constructor to prevent instantiation.
+     */
+    private MenuDisplay() {}
+
+    /**
      * Displays the main menu, used in the start flow.
      */
     public static void mainMenu() {
@@ -31,8 +36,8 @@ public class MenuDisplay {
         System.out.println(InteractionKeys.WRITE_DIARY + ". Write a new cooking diary entry.");
         System.out.println(InteractionKeys.DELETE_DIARY + ". Delete an existing entry.");
         System.out.println(InteractionKeys.RUN_EDIT_FLOW + ". Edit an existing entry.");
-        System.out.println(InteractionKeys.RUN_SEARCH_FLOW + ". Search through diary entries.");
-        System.out.println(InteractionKeys.EXPORT_DIARIES + ". Export all diary sorted by date.");
+        System.out.println(InteractionKeys.RUN_SEARCH_FLOW + ". Search through cooking diary entries.");
+        System.out.println(InteractionKeys.EXPORT_DIARIES + ". Export all diaries sorted by date.");
         System.out.println(InteractionKeys.EXPORT_AUTHOR_STATISTICS + ". Show author statistics.");
         System.out.println(InteractionKeys.LOGOUT + ". Log out.");
     }
