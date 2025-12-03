@@ -88,7 +88,7 @@ public class DiaryCreateUI {
 
         // Add the diary entry to the register.
         DiaryEntry diaryEntry = DiaryService.getInstance().createDiaryEntry(title, content, author, labels);
-        System.out.println("Successfully created recipe diary with title: " + diaryEntry.getTitle() + ".");
+        System.out.println("Successfully created cooking diary with title: " + diaryEntry.getTitle() + ".");
     }
 
 }

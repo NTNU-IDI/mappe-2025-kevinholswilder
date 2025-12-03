@@ -49,7 +49,7 @@ public class DiaryDeleteUI {
         // If true is returned, the diary entry was successfully deleted, else it was not found.
         boolean diaryExists = DiaryService.getInstance().deleteDiaryEntry(title, UserService.getCurrentUser());
         if (diaryExists) {
-            System.out.println("Recipe diary with title " + title + " was successfully deleted.");
+            System.out.println("Cooking diary with title " + title + " was successfully deleted.");
         } else {
             System.out.println("No entry was found.");
         }
