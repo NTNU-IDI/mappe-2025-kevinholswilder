@@ -24,7 +24,7 @@ public class DiaryEntryTest {
      */
     @Test
     public void testDiaryEntry() {
-        Author author = new Author("supermario", "Mario", "Mario");
+        Author author = new Author("supermario", "Mario", "Luigi");
         DiaryEntry diaryEntry = new DiaryEntry("Pizza", "1x Cheese, 1x Tomatoes, 1x Pepperoni", author);
 
         // Add label

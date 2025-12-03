@@ -48,13 +48,15 @@ public class MainTest {
         RegisterTest registerTest = new RegisterTest();
         registerTest.startRegisterTest();
 
+        // UtilityManager Test
+        UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
+        utilityManagerTest.startUtilityManagerTest();
+
         // UI Test
         ConsoleUITest consoleUITest = new ConsoleUITest();
         consoleUITest.startUITest();
 
-        // UtilityManager Test
-        UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
-        utilityManagerTest.startUtilityManagerTest();
+        System.out.println("All tests have been run successfully.");
     }
 
 }

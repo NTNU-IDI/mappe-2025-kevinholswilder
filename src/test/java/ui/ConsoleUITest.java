@@ -3,7 +3,6 @@ package test.java.ui;
 import main.java.edu.ntnu.iir.bidata.ui.ConsoleUI;
 import org.junit.Assert;
 import org.junit.Test;
-import main.java.edu.ntnu.iir.bidata.flow.FlowHandler;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
@@ -41,8 +40,6 @@ public class ConsoleUITest {
         }
 
         Assert.assertNotNull(this.scanner);
-        // Start the flow.
-        FlowHandler.startFlow(this.scanner);
     }
 
 }
