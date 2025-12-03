@@ -1,4 +1,4 @@
-package test.java.ui;
+package test.java.edu.ntnu.iir.bidata.ui;
 
 import main.java.edu.ntnu.iir.bidata.ui.ConsoleUI;
 import org.junit.Assert;

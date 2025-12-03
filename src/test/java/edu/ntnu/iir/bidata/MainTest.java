@@ -1,4 +1,4 @@
-package test.java;
+package test.java.edu.ntnu.iir.bidata;
 
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;
@@ -7,11 +7,11 @@ import main.java.edu.ntnu.iir.bidata.register.DiaryRegister;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
 import main.java.edu.ntnu.iir.bidata.ui.ConsoleUI;
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
-import test.java.models.AuthorTest;
-import test.java.models.DiaryEntryTest;
-import test.java.register.RegisterTest;
-import test.java.ui.ConsoleUITest;
-import test.java.utils.UtilityManagerTest;
+import test.java.edu.ntnu.iir.bidata.models.AuthorTest;
+import test.java.edu.ntnu.iir.bidata.models.DiaryEntryTest;
+import test.java.edu.ntnu.iir.bidata.register.RegisterTest;
+import test.java.edu.ntnu.iir.bidata.ui.ConsoleUITest;
+import test.java.edu.ntnu.iir.bidata.utils.UtilityManagerTest;
 
 /**
  * <p>Main entry point for running all tests in the project.</p>

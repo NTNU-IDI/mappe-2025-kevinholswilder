@@ -1,4 +1,4 @@
-package test.java.register;
+package test.java.edu.ntnu.iir.bidata.register;
 
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import main.java.edu.ntnu.iir.bidata.models.DiaryEntry;

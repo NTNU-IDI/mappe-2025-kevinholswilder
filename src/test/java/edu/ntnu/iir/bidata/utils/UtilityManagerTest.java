@@ -1,4 +1,4 @@
-package test.java.utils;
+package test.java.edu.ntnu.iir.bidata.utils;
 
 import main.java.edu.ntnu.iir.bidata.utils.UtilityManager;
 import org.junit.Assert;

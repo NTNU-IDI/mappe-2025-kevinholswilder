@@ -186,7 +186,7 @@ To run the tests, open up `Command Prompt` and navigate to the directory where t
 
 Then run the following command:
 </br>
-`java -cp cooking-diary-v<version>.jar test.java.MainTest`
+`java -cp cooking-diary-v<version>.jar test.java.edu.ntnu.iir.bidata.MainTest`
 
 Again, replace `<version>` with the version you downloaded.
 

@@ -1,4 +1,4 @@
-package test.java.models;
+package test.java.edu.ntnu.iir.bidata.models;
 
 import main.java.edu.ntnu.iir.bidata.enumerations.RecipeLabel;
 import main.java.edu.ntnu.iir.bidata.models.Author;

@@ -1,4 +1,4 @@
-package test.java.models;
+package test.java.edu.ntnu.iir.bidata.models;
 
 import main.java.edu.ntnu.iir.bidata.models.Author;
 import org.junit.Assert;
