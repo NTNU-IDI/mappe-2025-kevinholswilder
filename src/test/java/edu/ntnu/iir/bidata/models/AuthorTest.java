@@ -7,9 +7,7 @@ import org.junit.Test;
 /**
  * Unit tests for the {@link Author} class.
  *
- * <p>
- *     This class tests the functionality of the {@link Author} class.
- * </p>
+ * <p>This class tests the functionality of the {@link Author} class.
  *
  * @author Kevin Holswilder
  * @since 2025/11/25
@@ -17,28 +15,29 @@ import org.junit.Test;
 
 public class AuthorTest {
 
-    /**
-     * Tests the creation of a {@link Author} object and verifies that the attributes are set correctly.
-     */
-    @Test
-    public void testAuthor() {
-        Author author = new Author("kevinholswilder", "Kevin", "Holswilder");
+  /**
+   * Tests the creation of a {@link Author} object
+   * and verifies that the attributes are set correctly.
+   */
+  @Test
+  public void testAuthor() {
+    Author author = new Author("kevinholswilder", "Kevin", "Holswilder");
 
-        // Positive tests
-        Assert.assertEquals("kevinholswilder", author.getUsername());
-        Assert.assertEquals("Kevin", author.getName());
+    // Positive tests
+    Assert.assertEquals("kevinholswilder", author.getUsername());
+    Assert.assertEquals("Kevin", author.getName());
 
-        // Negative tests
-        Assert.assertNotEquals("kevin", author.getUsername());
-        Assert.assertNotNull(author.getName());
-        Assert.assertNotNull(author.getSurname());
-    }
+    // Negative tests
+    Assert.assertNotEquals("kevin", author.getUsername());
+    Assert.assertNotNull(author.getName());
+    Assert.assertNotNull(author.getSurname());
+  }
 
-    /**
-     * Start the author test.
-     */
-    public void startAuthorTest() {
-        this.testAuthor();
-    }
+  /**
+   * Start the author test.
+   */
+  public void startAuthorTest() {
+    this.testAuthor();
+  }
 
 }

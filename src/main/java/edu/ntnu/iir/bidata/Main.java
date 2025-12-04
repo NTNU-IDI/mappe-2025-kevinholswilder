@@ -5,9 +5,8 @@ import main.java.edu.ntnu.iir.bidata.ui.ConsoleUI;
 /**
  * Entry point of the program.
  *
- * <p>
- *     This class contains the {@code main} method which initializes the console user interface,
- *     and starts the program.
+ * <p>This class contains the {@code main} method which initializes the console user interface,
+ * and starts the program.
  * </p>
  *
  * @author Kevin Holswilder
@@ -16,15 +15,16 @@ import main.java.edu.ntnu.iir.bidata.ui.ConsoleUI;
 
 public class Main {
 
-    /**
-     * Launches the program.
-     *
-     * @param args command line arguments.
-     */
-    public static void main(String[] args) {
-        ConsoleUI consoleUI = new ConsoleUI();
-        consoleUI.init();
-        consoleUI.start();
-    }
+  /**
+   * Launches the program.
+   *
+   * @param args command line arguments.
+   */
+  @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+  public static void main(String[] args) {
+    ConsoleUI consoleUI = new ConsoleUI();
+    consoleUI.init();
+    consoleUI.start();
+  }
 
 }

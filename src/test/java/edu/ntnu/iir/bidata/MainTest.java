@@ -14,13 +14,16 @@ import test.java.edu.ntnu.iir.bidata.ui.ConsoleUITest;
 import test.java.edu.ntnu.iir.bidata.utils.UtilityManagerTest;
 
 /**
- * <p>Main entry point for running all tests in the project.</p>
+ * Main entry point for running all tests in the project.
  *
- * This class runs the following tests:
+ * <p>This class runs the following tests:
  * <ul>
  *     <li>Model Tests ({@link Author}, {@link DiaryEntry})</li>
  *     <li>Register Tests ({@link DiaryEntry})</li>
- *     <li>Register Tests ({@link RegisterHandler}, {@link DiaryRegister}, {@link AuthorRegister})</li>
+ *     <li>
+ *       Register Tests ({@link RegisterHandler}, {@link DiaryRegister},
+ *       {@link AuthorRegister})
+ *     </li>
  *     <li>Console UI Test ({@link ConsoleUI})</li>
  *     <li>UtilityManger Test ({@link UtilityManager})</li>
  * </ul>
@@ -31,32 +34,33 @@ import test.java.edu.ntnu.iir.bidata.utils.UtilityManagerTest;
 
 public class MainTest {
 
-    /**
-     * Launches all tests.
-     *
-     * @param args command line arguments.
-     */
-    public static void main(String[] args) {
-        // Model Test
-        AuthorTest authorTest = new AuthorTest();
-        authorTest.startAuthorTest();
+  /**
+   * Launches all tests.
+   *
+   * @param args command line arguments.
+   */
+  @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+  public static void main(String[] args) {
+    // Model Test
+    AuthorTest authorTest = new AuthorTest();
+    authorTest.startAuthorTest();
 
-        DiaryEntryTest diaryEntryTest = new DiaryEntryTest();
-        diaryEntryTest.startDiaryEntryTest();
+    DiaryEntryTest diaryEntryTest = new DiaryEntryTest();
+    diaryEntryTest.startDiaryEntryTest();
 
-        // Register Test
-        RegisterTest registerTest = new RegisterTest();
-        registerTest.startRegisterTest();
+    // Register Test
+    RegisterTest registerTest = new RegisterTest();
+    registerTest.startRegisterTest();
 
-        // UtilityManager Test
-        UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
-        utilityManagerTest.startUtilityManagerTest();
+    // UtilityManager Test
+    UtilityManagerTest utilityManagerTest = new UtilityManagerTest();
+    utilityManagerTest.startUtilityManagerTest();
 
-        // UI Test
-        ConsoleUITest consoleUITest = new ConsoleUITest();
-        consoleUITest.startUITest();
+    // UI Test
+    ConsoleUITest consoleUITest = new ConsoleUITest();
+    consoleUITest.startUITest();
 
-        System.out.println("All tests have been run successfully.");
-    }
+    System.out.println("All tests have been run successfully.");
+  }
 
 }
