@@ -151,6 +151,7 @@ This project uses the following dependencies:
 There are two methods to run the application:
 
 ### Method 1.
+*Noe: Before running the project, be sure to add JUnit4 to the classpath as the project does not use a build tool.*
 Clone the project in a preferred IDE, and run the application from the Main class (`main/java/edu/ntnu/iir/bidata/Main.java`).
 
 ### Method 2.
