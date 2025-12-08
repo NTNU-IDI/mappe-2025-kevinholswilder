@@ -9,27 +9,28 @@ package main.java.edu.ntnu.iir.bidata.register;
 
 public class RegisterHandler {
 
-    /**
-     * Private constructor to prevent instantiation.
-     */
-    private RegisterHandler() {}
+  /**
+   * Private constructor to prevent instantiation.
+   */
+  private RegisterHandler() {
+  }
 
-    /**
-     * Provides access to the diary register instance.
-     *
-     * @return the {@link DiaryRegister} instance.
-     */
-    public static DiaryRegister getDiaryRegister() {
-        return DiaryRegister.getInstance();
-    }
+  /**
+   * Provides access to the diary register instance.
+   *
+   * @return the {@link DiaryRegister} instance.
+   */
+  public static DiaryRegister getDiaryRegister() {
+    return DiaryRegister.getInstance();
+  }
 
-    /**
-     * Provides access to the author register instance.
-     *
-     * @return the {@link AuthorRegister} instance.
-     */
-    public static AuthorRegister getAuthorRegister() {
-        return AuthorRegister.getInstance();
-    }
+  /**
+   * Provides access to the author register instance.
+   *
+   * @return the {@link AuthorRegister} instance.
+   */
+  public static AuthorRegister getAuthorRegister() {
+    return AuthorRegister.getInstance();
+  }
 
 }

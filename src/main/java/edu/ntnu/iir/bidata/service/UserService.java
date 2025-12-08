@@ -5,10 +5,8 @@ import main.java.edu.ntnu.iir.bidata.register.AuthorRegister;
 import main.java.edu.ntnu.iir.bidata.register.RegisterHandler;
 
 /**
- * <p>
  * This class provides methods for user authentication and registration.
  * Additionally, it provides helper-methods for accessing the current logged-in user.
- * </p>
  *
  * @author Kevin Holswilder
  * @since 2025/12/01
@@ -19,7 +17,8 @@ public class UserService {
   private static Author currentUser;
 
   /**
-   * Checks if a username is linked to a {@link Author} object in the register and logs the user in if it is.
+   * Checks if a username is linked to a {@link Author} object in the register
+   * and logs the user in if it is.
    *
    * @param username the username to check.
    * @return true if the {@link Author} exists, false otherwise.
@@ -47,6 +46,8 @@ public class UserService {
   }
 
   /**
+   * Returns the current user.
+   *
    * @return a {@link Author} who is currently logged in, or null if no user is logged in.
    */
   public static Author getCurrentUser() {
@@ -54,6 +55,8 @@ public class UserService {
   }
 
   /**
+   * Sets the current user.
+   *
    * @param author the {@link Author} to set as the current user.
    */
   public void setCurrentUser(Author author) {
