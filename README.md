@@ -200,3 +200,4 @@ The following references/sources were used in the project:
 * [Singleton Method Design Pattern in Java](https://www.geeksforgeeks.org/java/singleton-class-java/)
 * [JUnit User Guide](https://docs.junit.org/current/user-guide/)
 * [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)
+* [How to Write Doc Comments for the Javadoc Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
