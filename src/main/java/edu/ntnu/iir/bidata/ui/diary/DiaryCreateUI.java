@@ -61,7 +61,7 @@ public class DiaryCreateUI {
 
     // Add (optional) labels to the diary entry.
     System.out.println(
-        "Enter labels for you recipe, one at a time."
+        "Enter labels for your recipe, one at a time."
             + "\nType 'exit' when you are finished or don't wish to add any labels."
     );
     System.out.println("Available Labels:");
