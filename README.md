@@ -166,7 +166,7 @@ Once located, you can run the application by using the following command:
 
 *Note: you have to replace `<version>` with the version that was downloaded.*
 </br>
-**Example:** `java -jar cooking-diary-v1.0.jar`
+**Example:** `java -jar cooking-diary-v1.0.0.jar`
 
 ## How to run the tests
 As mentioned, the following classes are being tested:
